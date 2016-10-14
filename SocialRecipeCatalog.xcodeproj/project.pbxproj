@@ -53,6 +53,7 @@
 		65DD919B1DB165770063121C /* UIView+WebCacheOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 65DD91681DB165770063121C /* UIView+WebCacheOperation.m */; };
 		65DD919E1DB16EB10063121C /* SRCF2FService.m in Sources */ = {isa = PBXBuildFile; fileRef = 65DD919D1DB16EB10063121C /* SRCF2FService.m */; };
 		65DD91A11DB184C00063121C /* SRCF2FRecipe.m in Sources */ = {isa = PBXBuildFile; fileRef = 65DD91A01DB184C00063121C /* SRCF2FRecipe.m */; };
+		65DD91A41DB190190063121C /* SRCSignal.m in Sources */ = {isa = PBXBuildFile; fileRef = 65DD91A31DB190190063121C /* SRCSignal.m */; };
 		65E7128F1DB16247009574CD /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 65E7128E1DB16247009574CD /* main.m */; };
 		65E712921DB16247009574CD /* SRCAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 65E712911DB16247009574CD /* SRCAppDelegate.m */; };
 		65E712951DB16247009574CD /* SRCMasterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 65E712941DB16247009574CD /* SRCMasterViewController.m */; };
@@ -180,6 +181,8 @@
 		65DD919D1DB16EB10063121C /* SRCF2FService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SRCF2FService.m; sourceTree = "<group>"; };
 		65DD919F1DB184C00063121C /* SRCF2FRecipe.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SRCF2FRecipe.h; sourceTree = "<group>"; };
 		65DD91A01DB184C00063121C /* SRCF2FRecipe.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SRCF2FRecipe.m; sourceTree = "<group>"; };
+		65DD91A21DB190190063121C /* SRCSignal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SRCSignal.h; sourceTree = "<group>"; };
+		65DD91A31DB190190063121C /* SRCSignal.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SRCSignal.m; sourceTree = "<group>"; };
 		65E7128A1DB16247009574CD /* SocialRecipeCatalog.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SocialRecipeCatalog.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		65E7128E1DB16247009574CD /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		65E712901DB16247009574CD /* SRCAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SRCAppDelegate.h; sourceTree = "<group>"; };
@@ -413,6 +416,8 @@
 				65DD919D1DB16EB10063121C /* SRCF2FService.m */,
 				65DD919F1DB184C00063121C /* SRCF2FRecipe.h */,
 				65DD91A01DB184C00063121C /* SRCF2FRecipe.m */,
+				65DD91A21DB190190063121C /* SRCSignal.h */,
+				65DD91A31DB190190063121C /* SRCSignal.m */,
 			);
 			path = SocialRecipeCatalog;
 			sourceTree = "<group>";
@@ -604,6 +609,7 @@
 				65DD91851DB165770063121C /* UIViewController+PromiseKit.m in Sources */,
 				65DD91791DB165770063121C /* PMKPromise+Join.m in Sources */,
 				65DD91971DB165770063121C /* UIImage+WebP.m in Sources */,
+				65DD91A41DB190190063121C /* SRCSignal.m in Sources */,
 				65DD91901DB165770063121C /* SDWebImageDownloader.m in Sources */,
 				65E712981DB16247009574CD /* SRCDetailViewController.m in Sources */,
 				65DD91701DB165770063121C /* CLGeocoder+PromiseKit.m in Sources */,
