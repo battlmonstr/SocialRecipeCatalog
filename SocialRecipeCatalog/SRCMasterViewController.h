@@ -14,6 +14,7 @@
 
 @property (strong, nonatomic) SRCDetailViewController *detailViewController;
 
+- (IBAction)textFieldDidChange:(UITextField *)searchTextField;
 
 @end
 

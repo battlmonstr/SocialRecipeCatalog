@@ -8,10 +8,13 @@
 
 #import "SRCMasterViewController.h"
 #import "SRCDetailViewController.h"
+#import "SRCSignal.h"
 
 @interface SRCMasterViewController ()
 
 @property NSMutableArray *objects;
+@property SRCSignal *textFieldDidChangeSignal;
+
 @end
 
 @implementation SRCMasterViewController
@@ -24,6 +27,13 @@
     UIBarButtonItem *addButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(insertNewObject:)];
     self.navigationItem.rightBarButtonItem = addButton;
     self.detailViewController = (SRCDetailViewController *)[[self.splitViewController.viewControllers lastObject] topViewController];
+    
+    self.textFieldDidChangeSignal = [SRCSignal new];
+    [self.textFieldDidChangeSignal setOutputPromiseSubscriber:^(PMKPromise *promise) {
+        promise.then(^(NSString *text) {
+            NSLog(@"%@", text);
+        });
+    }];
 }
 
 - (void)viewWillAppear:(BOOL)animated {
@@ -43,6 +53,11 @@
     [self.objects insertObject:[NSDate date] atIndex:0];
     NSIndexPath *indexPath = [NSIndexPath indexPathForRow:0 inSection:0];
     [self.tableView insertRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationAutomatic];
+}
+
+- (IBAction)textFieldDidChange:(UITextField *)searchTextField
+{
+    [self.textFieldDidChangeSignal resolve:searchTextField.text];
 }
 
 #pragma mark - Segues
