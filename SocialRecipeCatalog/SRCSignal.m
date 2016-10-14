@@ -47,4 +47,17 @@
     [self resubscribe];
 }
 
+- (void)pipeToSignal:(SRCSignal *)signal
+{
+    __weak SRCSignal *weakSignal = signal;
+    [self setOutputPromiseSubscriber:^(PMKPromise *promise) {
+        promise.then(^(id data) {
+            [weakSignal resolve:data];
+        })
+        .catch(^(NSError *error) {
+            [weakSignal resolve:error];
+        });
+    }];
+}
+
 @end
