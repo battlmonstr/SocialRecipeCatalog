@@ -6,13 +6,13 @@
 //  Copyright © 2016 Brainroom Ltd. All rights reserved.
 //
 
-#import "DetailViewController.h"
+#import "SRCDetailViewController.h"
 
-@interface DetailViewController ()
+@interface SRCDetailViewController ()
 
 @end
 
-@implementation DetailViewController
+@implementation SRCDetailViewController
 
 #pragma mark - Managing the detail item
 

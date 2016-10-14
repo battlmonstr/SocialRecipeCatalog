@@ -8,7 +8,7 @@
 
 #import <XCTest/XCTest.h>
 
-@interface SocialRecipeCatalogUITests : XCTestCase
+@interface SRCSocialRecipeCatalogUITests : XCTestCase
 
 @end
 

@@ -8,11 +8,11 @@
 
 #import <UIKit/UIKit.h>
 
-@class DetailViewController;
+@class SRCDetailViewController;
 
-@interface MasterViewController : UITableViewController
+@interface SRCMasterViewController : UITableViewController
 
-@property (strong, nonatomic) DetailViewController *detailViewController;
+@property (strong, nonatomic) SRCDetailViewController *detailViewController;
 
 
 @end

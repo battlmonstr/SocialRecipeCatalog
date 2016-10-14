@@ -8,14 +8,14 @@
 
 /* Begin PBXBuildFile section */
 		65E7128F1DB16247009574CD /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 65E7128E1DB16247009574CD /* main.m */; };
-		65E712921DB16247009574CD /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 65E712911DB16247009574CD /* AppDelegate.m */; };
-		65E712951DB16247009574CD /* MasterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 65E712941DB16247009574CD /* MasterViewController.m */; };
-		65E712981DB16247009574CD /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 65E712971DB16247009574CD /* DetailViewController.m */; };
+		65E712921DB16247009574CD /* SRCAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 65E712911DB16247009574CD /* SRCAppDelegate.m */; };
+		65E712951DB16247009574CD /* SRCMasterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 65E712941DB16247009574CD /* SRCMasterViewController.m */; };
+		65E712981DB16247009574CD /* SRCDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 65E712971DB16247009574CD /* SRCDetailViewController.m */; };
 		65E7129B1DB16247009574CD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 65E712991DB16247009574CD /* Main.storyboard */; };
 		65E7129D1DB16247009574CD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 65E7129C1DB16247009574CD /* Assets.xcassets */; };
 		65E712A01DB16247009574CD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 65E7129E1DB16247009574CD /* LaunchScreen.storyboard */; };
-		65E712AB1DB16248009574CD /* SocialRecipeCatalogTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 65E712AA1DB16248009574CD /* SocialRecipeCatalogTests.m */; };
-		65E712B61DB16248009574CD /* SocialRecipeCatalogUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 65E712B51DB16248009574CD /* SocialRecipeCatalogUITests.m */; };
+		65E712AB1DB16248009574CD /* SRCSocialRecipeCatalogTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 65E712AA1DB16248009574CD /* SRCSocialRecipeCatalogTests.m */; };
+		65E712B61DB16248009574CD /* SRCSocialRecipeCatalogUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 65E712B51DB16248009574CD /* SRCSocialRecipeCatalogUITests.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,21 +38,21 @@
 /* Begin PBXFileReference section */
 		65E7128A1DB16247009574CD /* SocialRecipeCatalog.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SocialRecipeCatalog.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		65E7128E1DB16247009574CD /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		65E712901DB16247009574CD /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
-		65E712911DB16247009574CD /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		65E712931DB16247009574CD /* MasterViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MasterViewController.h; sourceTree = "<group>"; };
-		65E712941DB16247009574CD /* MasterViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MasterViewController.m; sourceTree = "<group>"; };
-		65E712961DB16247009574CD /* DetailViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DetailViewController.h; sourceTree = "<group>"; };
-		65E712971DB16247009574CD /* DetailViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DetailViewController.m; sourceTree = "<group>"; };
+		65E712901DB16247009574CD /* SRCAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SRCAppDelegate.h; sourceTree = "<group>"; };
+		65E712911DB16247009574CD /* SRCAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SRCAppDelegate.m; sourceTree = "<group>"; };
+		65E712931DB16247009574CD /* SRCMasterViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SRCMasterViewController.h; sourceTree = "<group>"; };
+		65E712941DB16247009574CD /* SRCMasterViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SRCMasterViewController.m; sourceTree = "<group>"; };
+		65E712961DB16247009574CD /* SRCDetailViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SRCDetailViewController.h; sourceTree = "<group>"; };
+		65E712971DB16247009574CD /* SRCDetailViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SRCDetailViewController.m; sourceTree = "<group>"; };
 		65E7129A1DB16247009574CD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		65E7129C1DB16247009574CD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		65E7129F1DB16247009574CD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		65E712A11DB16247009574CD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		65E712A61DB16248009574CD /* SocialRecipeCatalogTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SocialRecipeCatalogTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		65E712AA1DB16248009574CD /* SocialRecipeCatalogTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SocialRecipeCatalogTests.m; sourceTree = "<group>"; };
+		65E712AA1DB16248009574CD /* SRCSocialRecipeCatalogTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SRCSocialRecipeCatalogTests.m; sourceTree = "<group>"; };
 		65E712AC1DB16248009574CD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		65E712B11DB16248009574CD /* SocialRecipeCatalogUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SocialRecipeCatalogUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		65E712B51DB16248009574CD /* SocialRecipeCatalogUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SocialRecipeCatalogUITests.m; sourceTree = "<group>"; };
+		65E712B51DB16248009574CD /* SRCSocialRecipeCatalogUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SRCSocialRecipeCatalogUITests.m; sourceTree = "<group>"; };
 		65E712B71DB16248009574CD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -104,12 +104,12 @@
 		65E7128C1DB16247009574CD /* SocialRecipeCatalog */ = {
 			isa = PBXGroup;
 			children = (
-				65E712901DB16247009574CD /* AppDelegate.h */,
-				65E712911DB16247009574CD /* AppDelegate.m */,
-				65E712931DB16247009574CD /* MasterViewController.h */,
-				65E712941DB16247009574CD /* MasterViewController.m */,
-				65E712961DB16247009574CD /* DetailViewController.h */,
-				65E712971DB16247009574CD /* DetailViewController.m */,
+				65E712901DB16247009574CD /* SRCAppDelegate.h */,
+				65E712911DB16247009574CD /* SRCAppDelegate.m */,
+				65E712931DB16247009574CD /* SRCMasterViewController.h */,
+				65E712941DB16247009574CD /* SRCMasterViewController.m */,
+				65E712961DB16247009574CD /* SRCDetailViewController.h */,
+				65E712971DB16247009574CD /* SRCDetailViewController.m */,
 				65E712991DB16247009574CD /* Main.storyboard */,
 				65E7129C1DB16247009574CD /* Assets.xcassets */,
 				65E7129E1DB16247009574CD /* LaunchScreen.storyboard */,
@@ -130,7 +130,7 @@
 		65E712A91DB16248009574CD /* SocialRecipeCatalogTests */ = {
 			isa = PBXGroup;
 			children = (
-				65E712AA1DB16248009574CD /* SocialRecipeCatalogTests.m */,
+				65E712AA1DB16248009574CD /* SRCSocialRecipeCatalogTests.m */,
 				65E712AC1DB16248009574CD /* Info.plist */,
 			);
 			path = SocialRecipeCatalogTests;
@@ -139,7 +139,7 @@
 		65E712B41DB16248009574CD /* SocialRecipeCatalogUITests */ = {
 			isa = PBXGroup;
 			children = (
-				65E712B51DB16248009574CD /* SocialRecipeCatalogUITests.m */,
+				65E712B51DB16248009574CD /* SRCSocialRecipeCatalogUITests.m */,
 				65E712B71DB16248009574CD /* Info.plist */,
 			);
 			path = SocialRecipeCatalogUITests;
@@ -275,10 +275,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				65E712921DB16247009574CD /* AppDelegate.m in Sources */,
-				65E712951DB16247009574CD /* MasterViewController.m in Sources */,
+				65E712921DB16247009574CD /* SRCAppDelegate.m in Sources */,
+				65E712951DB16247009574CD /* SRCMasterViewController.m in Sources */,
 				65E7128F1DB16247009574CD /* main.m in Sources */,
-				65E712981DB16247009574CD /* DetailViewController.m in Sources */,
+				65E712981DB16247009574CD /* SRCDetailViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -286,7 +286,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				65E712AB1DB16248009574CD /* SocialRecipeCatalogTests.m in Sources */,
+				65E712AB1DB16248009574CD /* SRCSocialRecipeCatalogTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -294,7 +294,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				65E712B61DB16248009574CD /* SocialRecipeCatalogUITests.m in Sources */,
+				65E712B61DB16248009574CD /* SRCSocialRecipeCatalogUITests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -506,6 +506,7 @@
 				65E712BC1DB16248009574CD /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		65E712BD1DB16248009574CD /* Build configuration list for PBXNativeTarget "SocialRecipeCatalogTests" */ = {
 			isa = XCConfigurationList;
@@ -514,6 +515,7 @@
 				65E712BF1DB16248009574CD /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		65E712C01DB16248009574CD /* Build configuration list for PBXNativeTarget "SocialRecipeCatalogUITests" */ = {
 			isa = XCConfigurationList;
@@ -522,6 +524,7 @@
 				65E712C21DB16248009574CD /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
