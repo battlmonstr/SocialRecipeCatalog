@@ -51,6 +51,8 @@
 		65DD91991DB165770063121C /* UIImageView+WebCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 65DD91641DB165770063121C /* UIImageView+WebCache.m */; };
 		65DD919A1DB165770063121C /* UIView+WebCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 65DD91661DB165770063121C /* UIView+WebCache.m */; };
 		65DD919B1DB165770063121C /* UIView+WebCacheOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 65DD91681DB165770063121C /* UIView+WebCacheOperation.m */; };
+		65DD919E1DB16EB10063121C /* SRCF2FService.m in Sources */ = {isa = PBXBuildFile; fileRef = 65DD919D1DB16EB10063121C /* SRCF2FService.m */; };
+		65DD91A11DB184C00063121C /* SRCF2FRecipe.m in Sources */ = {isa = PBXBuildFile; fileRef = 65DD91A01DB184C00063121C /* SRCF2FRecipe.m */; };
 		65E7128F1DB16247009574CD /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 65E7128E1DB16247009574CD /* main.m */; };
 		65E712921DB16247009574CD /* SRCAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 65E712911DB16247009574CD /* SRCAppDelegate.m */; };
 		65E712951DB16247009574CD /* SRCMasterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 65E712941DB16247009574CD /* SRCMasterViewController.m */; };
@@ -174,6 +176,10 @@
 		65DD91661DB165770063121C /* UIView+WebCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+WebCache.m"; sourceTree = "<group>"; };
 		65DD91671DB165770063121C /* UIView+WebCacheOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+WebCacheOperation.h"; sourceTree = "<group>"; };
 		65DD91681DB165770063121C /* UIView+WebCacheOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+WebCacheOperation.m"; sourceTree = "<group>"; };
+		65DD919C1DB16EB10063121C /* SRCF2FService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SRCF2FService.h; sourceTree = "<group>"; };
+		65DD919D1DB16EB10063121C /* SRCF2FService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SRCF2FService.m; sourceTree = "<group>"; };
+		65DD919F1DB184C00063121C /* SRCF2FRecipe.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SRCF2FRecipe.h; sourceTree = "<group>"; };
+		65DD91A01DB184C00063121C /* SRCF2FRecipe.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SRCF2FRecipe.m; sourceTree = "<group>"; };
 		65E7128A1DB16247009574CD /* SocialRecipeCatalog.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SocialRecipeCatalog.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		65E7128E1DB16247009574CD /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		65E712901DB16247009574CD /* SRCAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SRCAppDelegate.h; sourceTree = "<group>"; };
@@ -403,6 +409,10 @@
 				65E7129E1DB16247009574CD /* LaunchScreen.storyboard */,
 				65E712A11DB16247009574CD /* Info.plist */,
 				65E7128D1DB16247009574CD /* Supporting Files */,
+				65DD919C1DB16EB10063121C /* SRCF2FService.h */,
+				65DD919D1DB16EB10063121C /* SRCF2FService.m */,
+				65DD919F1DB184C00063121C /* SRCF2FRecipe.h */,
+				65DD91A01DB184C00063121C /* SRCF2FRecipe.m */,
 			);
 			path = SocialRecipeCatalog;
 			sourceTree = "<group>";
@@ -570,6 +580,7 @@
 				65DD919A1DB165770063121C /* UIView+WebCache.m in Sources */,
 				65DD91721DB165770063121C /* MKDirections+PromiseKit.m in Sources */,
 				65DD91741DB165770063121C /* NSFileManager+PromiseKit.m in Sources */,
+				65DD919E1DB16EB10063121C /* SRCF2FService.m in Sources */,
 				65DD91781DB165770063121C /* PMKPromise+Hang.m in Sources */,
 				65E712921DB16247009574CD /* SRCAppDelegate.m in Sources */,
 				65E712951DB16247009574CD /* SRCMasterViewController.m in Sources */,
@@ -597,6 +608,7 @@
 				65E712981DB16247009574CD /* SRCDetailViewController.m in Sources */,
 				65DD91701DB165770063121C /* CLGeocoder+PromiseKit.m in Sources */,
 				65DD91961DB165770063121C /* UIImage+MultiFormat.m in Sources */,
+				65DD91A11DB184C00063121C /* SRCF2FRecipe.m in Sources */,
 				65DD918F1DB165770063121C /* SDWebImageDecoder.m in Sources */,
 				65DD917A1DB165770063121C /* PMKPromise+Pause.m in Sources */,
 				65DD91841DB165770063121C /* UIView+PromiseKit.m in Sources */,
