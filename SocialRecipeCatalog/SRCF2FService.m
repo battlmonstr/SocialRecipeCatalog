@@ -115,33 +115,25 @@ static NSString * const kSRCAPIKey = @"77c80ca9368e24336a7185a9e569e599";
        (int)page + 1, encodedQuery, kSRCAPIKey];
     NSURL *url = [NSURL URLWithString:[kSRCBaseURLString stringByAppendingString:urlString]];
     
-    return [PMKPromise new:^(PMKPromiseFulfiller fulfiller, PMKPromiseRejecter rejecter) {
+    return [PMKPromise promiseWithResolver:^(PMKResolver resolver) {
         NSURLSession *session = [NSURLSession sharedSession];
         NSURLSessionDataTask *task = [session dataTaskWithURL:url completionHandler:^(NSData * _Nullable data,
                 NSURLResponse * _Nullable response, NSError * _Nullable networkError) {
             if (networkError) {
-                rejecter(networkError);
+                resolver(networkError);
                 return;
             }
             NSError *error = nil;
             id result = [SRCF2FService decodeJSONResponse:response withData:data error:&error];
-            if (error) {
-                rejecter(error);
-            } else {
-                fulfiller(result);
-            }
+            resolver(error ? error : result);
         }];
         [task resume];
     }]
     .thenInBackground(^(id jsonObject) {
-        return [PMKPromise new:^(PMKPromiseFulfiller fulfiller, PMKPromiseRejecter rejecter) {
+        return [PMKPromise promiseWithResolver:^(PMKResolver resolver) {
             NSError *error = nil;
             id result = [SRCF2FService decodeRecipeListFromJSONObject:jsonObject error:&error];
-            if (error) {
-                rejecter(error);
-            } else {
-                fulfiller(result);
-            }
+            resolver(error ? error : result);
         }];
     });
 }
