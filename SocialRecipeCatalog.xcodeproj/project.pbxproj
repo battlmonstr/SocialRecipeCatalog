@@ -1,0 +1,529 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		65E7128F1DB16247009574CD /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 65E7128E1DB16247009574CD /* main.m */; };
+		65E712921DB16247009574CD /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 65E712911DB16247009574CD /* AppDelegate.m */; };
+		65E712951DB16247009574CD /* MasterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 65E712941DB16247009574CD /* MasterViewController.m */; };
+		65E712981DB16247009574CD /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 65E712971DB16247009574CD /* DetailViewController.m */; };
+		65E7129B1DB16247009574CD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 65E712991DB16247009574CD /* Main.storyboard */; };
+		65E7129D1DB16247009574CD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 65E7129C1DB16247009574CD /* Assets.xcassets */; };
+		65E712A01DB16247009574CD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 65E7129E1DB16247009574CD /* LaunchScreen.storyboard */; };
+		65E712AB1DB16248009574CD /* SocialRecipeCatalogTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 65E712AA1DB16248009574CD /* SocialRecipeCatalogTests.m */; };
+		65E712B61DB16248009574CD /* SocialRecipeCatalogUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 65E712B51DB16248009574CD /* SocialRecipeCatalogUITests.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		65E712A71DB16248009574CD /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 65E712821DB16247009574CD /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 65E712891DB16247009574CD;
+			remoteInfo = SocialRecipeCatalog;
+		};
+		65E712B21DB16248009574CD /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 65E712821DB16247009574CD /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 65E712891DB16247009574CD;
+			remoteInfo = SocialRecipeCatalog;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		65E7128A1DB16247009574CD /* SocialRecipeCatalog.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SocialRecipeCatalog.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		65E7128E1DB16247009574CD /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		65E712901DB16247009574CD /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		65E712911DB16247009574CD /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		65E712931DB16247009574CD /* MasterViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MasterViewController.h; sourceTree = "<group>"; };
+		65E712941DB16247009574CD /* MasterViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MasterViewController.m; sourceTree = "<group>"; };
+		65E712961DB16247009574CD /* DetailViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DetailViewController.h; sourceTree = "<group>"; };
+		65E712971DB16247009574CD /* DetailViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DetailViewController.m; sourceTree = "<group>"; };
+		65E7129A1DB16247009574CD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		65E7129C1DB16247009574CD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		65E7129F1DB16247009574CD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		65E712A11DB16247009574CD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		65E712A61DB16248009574CD /* SocialRecipeCatalogTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SocialRecipeCatalogTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		65E712AA1DB16248009574CD /* SocialRecipeCatalogTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SocialRecipeCatalogTests.m; sourceTree = "<group>"; };
+		65E712AC1DB16248009574CD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		65E712B11DB16248009574CD /* SocialRecipeCatalogUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SocialRecipeCatalogUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		65E712B51DB16248009574CD /* SocialRecipeCatalogUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SocialRecipeCatalogUITests.m; sourceTree = "<group>"; };
+		65E712B71DB16248009574CD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		65E712871DB16247009574CD /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		65E712A31DB16248009574CD /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		65E712AE1DB16248009574CD /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		65E712811DB16247009574CD = {
+			isa = PBXGroup;
+			children = (
+				65E7128C1DB16247009574CD /* SocialRecipeCatalog */,
+				65E712A91DB16248009574CD /* SocialRecipeCatalogTests */,
+				65E712B41DB16248009574CD /* SocialRecipeCatalogUITests */,
+				65E7128B1DB16247009574CD /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		65E7128B1DB16247009574CD /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				65E7128A1DB16247009574CD /* SocialRecipeCatalog.app */,
+				65E712A61DB16248009574CD /* SocialRecipeCatalogTests.xctest */,
+				65E712B11DB16248009574CD /* SocialRecipeCatalogUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		65E7128C1DB16247009574CD /* SocialRecipeCatalog */ = {
+			isa = PBXGroup;
+			children = (
+				65E712901DB16247009574CD /* AppDelegate.h */,
+				65E712911DB16247009574CD /* AppDelegate.m */,
+				65E712931DB16247009574CD /* MasterViewController.h */,
+				65E712941DB16247009574CD /* MasterViewController.m */,
+				65E712961DB16247009574CD /* DetailViewController.h */,
+				65E712971DB16247009574CD /* DetailViewController.m */,
+				65E712991DB16247009574CD /* Main.storyboard */,
+				65E7129C1DB16247009574CD /* Assets.xcassets */,
+				65E7129E1DB16247009574CD /* LaunchScreen.storyboard */,
+				65E712A11DB16247009574CD /* Info.plist */,
+				65E7128D1DB16247009574CD /* Supporting Files */,
+			);
+			path = SocialRecipeCatalog;
+			sourceTree = "<group>";
+		};
+		65E7128D1DB16247009574CD /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				65E7128E1DB16247009574CD /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		65E712A91DB16248009574CD /* SocialRecipeCatalogTests */ = {
+			isa = PBXGroup;
+			children = (
+				65E712AA1DB16248009574CD /* SocialRecipeCatalogTests.m */,
+				65E712AC1DB16248009574CD /* Info.plist */,
+			);
+			path = SocialRecipeCatalogTests;
+			sourceTree = "<group>";
+		};
+		65E712B41DB16248009574CD /* SocialRecipeCatalogUITests */ = {
+			isa = PBXGroup;
+			children = (
+				65E712B51DB16248009574CD /* SocialRecipeCatalogUITests.m */,
+				65E712B71DB16248009574CD /* Info.plist */,
+			);
+			path = SocialRecipeCatalogUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		65E712891DB16247009574CD /* SocialRecipeCatalog */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 65E712BA1DB16248009574CD /* Build configuration list for PBXNativeTarget "SocialRecipeCatalog" */;
+			buildPhases = (
+				65E712861DB16247009574CD /* Sources */,
+				65E712871DB16247009574CD /* Frameworks */,
+				65E712881DB16247009574CD /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = SocialRecipeCatalog;
+			productName = SocialRecipeCatalog;
+			productReference = 65E7128A1DB16247009574CD /* SocialRecipeCatalog.app */;
+			productType = "com.apple.product-type.application";
+		};
+		65E712A51DB16248009574CD /* SocialRecipeCatalogTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 65E712BD1DB16248009574CD /* Build configuration list for PBXNativeTarget "SocialRecipeCatalogTests" */;
+			buildPhases = (
+				65E712A21DB16248009574CD /* Sources */,
+				65E712A31DB16248009574CD /* Frameworks */,
+				65E712A41DB16248009574CD /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				65E712A81DB16248009574CD /* PBXTargetDependency */,
+			);
+			name = SocialRecipeCatalogTests;
+			productName = SocialRecipeCatalogTests;
+			productReference = 65E712A61DB16248009574CD /* SocialRecipeCatalogTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		65E712B01DB16248009574CD /* SocialRecipeCatalogUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 65E712C01DB16248009574CD /* Build configuration list for PBXNativeTarget "SocialRecipeCatalogUITests" */;
+			buildPhases = (
+				65E712AD1DB16248009574CD /* Sources */,
+				65E712AE1DB16248009574CD /* Frameworks */,
+				65E712AF1DB16248009574CD /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				65E712B31DB16248009574CD /* PBXTargetDependency */,
+			);
+			name = SocialRecipeCatalogUITests;
+			productName = SocialRecipeCatalogUITests;
+			productReference = 65E712B11DB16248009574CD /* SocialRecipeCatalogUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		65E712821DB16247009574CD /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0730;
+				ORGANIZATIONNAME = "Brainroom Ltd.";
+				TargetAttributes = {
+					65E712891DB16247009574CD = {
+						CreatedOnToolsVersion = 7.3.1;
+					};
+					65E712A51DB16248009574CD = {
+						CreatedOnToolsVersion = 7.3.1;
+						TestTargetID = 65E712891DB16247009574CD;
+					};
+					65E712B01DB16248009574CD = {
+						CreatedOnToolsVersion = 7.3.1;
+						TestTargetID = 65E712891DB16247009574CD;
+					};
+				};
+			};
+			buildConfigurationList = 65E712851DB16247009574CD /* Build configuration list for PBXProject "SocialRecipeCatalog" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 65E712811DB16247009574CD;
+			productRefGroup = 65E7128B1DB16247009574CD /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				65E712891DB16247009574CD /* SocialRecipeCatalog */,
+				65E712A51DB16248009574CD /* SocialRecipeCatalogTests */,
+				65E712B01DB16248009574CD /* SocialRecipeCatalogUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		65E712881DB16247009574CD /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				65E712A01DB16247009574CD /* LaunchScreen.storyboard in Resources */,
+				65E7129D1DB16247009574CD /* Assets.xcassets in Resources */,
+				65E7129B1DB16247009574CD /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		65E712A41DB16248009574CD /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		65E712AF1DB16248009574CD /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		65E712861DB16247009574CD /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				65E712921DB16247009574CD /* AppDelegate.m in Sources */,
+				65E712951DB16247009574CD /* MasterViewController.m in Sources */,
+				65E7128F1DB16247009574CD /* main.m in Sources */,
+				65E712981DB16247009574CD /* DetailViewController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		65E712A21DB16248009574CD /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				65E712AB1DB16248009574CD /* SocialRecipeCatalogTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		65E712AD1DB16248009574CD /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				65E712B61DB16248009574CD /* SocialRecipeCatalogUITests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		65E712A81DB16248009574CD /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 65E712891DB16247009574CD /* SocialRecipeCatalog */;
+			targetProxy = 65E712A71DB16248009574CD /* PBXContainerItemProxy */;
+		};
+		65E712B31DB16248009574CD /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 65E712891DB16247009574CD /* SocialRecipeCatalog */;
+			targetProxy = 65E712B21DB16248009574CD /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		65E712991DB16247009574CD /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				65E7129A1DB16247009574CD /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		65E7129E1DB16247009574CD /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				65E7129F1DB16247009574CD /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		65E712B81DB16248009574CD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		65E712B91DB16248009574CD /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		65E712BB1DB16248009574CD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = SocialRecipeCatalog/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = name.lazarenko.daniel.SocialRecipeCatalog;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		65E712BC1DB16248009574CD /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = SocialRecipeCatalog/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = name.lazarenko.daniel.SocialRecipeCatalog;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		65E712BE1DB16248009574CD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = SocialRecipeCatalogTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = name.lazarenko.daniel.SocialRecipeCatalogTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SocialRecipeCatalog.app/SocialRecipeCatalog";
+			};
+			name = Debug;
+		};
+		65E712BF1DB16248009574CD /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = SocialRecipeCatalogTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = name.lazarenko.daniel.SocialRecipeCatalogTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SocialRecipeCatalog.app/SocialRecipeCatalog";
+			};
+			name = Release;
+		};
+		65E712C11DB16248009574CD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = SocialRecipeCatalogUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = name.lazarenko.daniel.SocialRecipeCatalogUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = SocialRecipeCatalog;
+			};
+			name = Debug;
+		};
+		65E712C21DB16248009574CD /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = SocialRecipeCatalogUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = name.lazarenko.daniel.SocialRecipeCatalogUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = SocialRecipeCatalog;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		65E712851DB16247009574CD /* Build configuration list for PBXProject "SocialRecipeCatalog" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				65E712B81DB16248009574CD /* Debug */,
+				65E712B91DB16248009574CD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		65E712BA1DB16248009574CD /* Build configuration list for PBXNativeTarget "SocialRecipeCatalog" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				65E712BB1DB16248009574CD /* Debug */,
+				65E712BC1DB16248009574CD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		65E712BD1DB16248009574CD /* Build configuration list for PBXNativeTarget "SocialRecipeCatalogTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				65E712BE1DB16248009574CD /* Debug */,
+				65E712BF1DB16248009574CD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		65E712C01DB16248009574CD /* Build configuration list for PBXNativeTarget "SocialRecipeCatalogUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				65E712C11DB16248009574CD /* Debug */,
+				65E712C21DB16248009574CD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 65E712821DB16247009574CD /* Project object */;
+}
