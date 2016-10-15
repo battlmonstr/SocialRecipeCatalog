@@ -10,9 +10,12 @@
 #import "SRCF2FService.h"
 #import "SRCSignal.h"
 
+static const NSTimeInterval kSRCThrottleTimeout = 1;
+
 @implementation SRCSearchEngine
 {
     SRCF2FService *_service;
+    SRCSignal *_throttledQuerySignal;
 }
 
 @synthesize resultSignal = _resultSignal;
@@ -23,7 +26,8 @@
     self = [super init];
     if (self == nil) return nil;
     _service = [SRCF2FService new];
-    _resultSignal = [querySignal flatMap:^PMKPromise *(id valueOrError) {
+    _throttledQuerySignal = [querySignal throttleWithTimeout:kSRCThrottleTimeout];
+    _resultSignal = [_throttledQuerySignal flatMap:^PMKPromise *(id valueOrError) {
         if ([valueOrError isKindOfClass:[NSError class]]) {
             return [PMKPromise promiseWithValue:valueOrError];
         }
