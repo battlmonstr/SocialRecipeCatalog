@@ -18,6 +18,8 @@
 		65330E931DB2A259008ACE21 /* SRCF2FTestURLProtocol.m in Sources */ = {isa = PBXBuildFile; fileRef = 65330E8E1DB2A259008ACE21 /* SRCF2FTestURLProtocol.m */; };
 		65330E941DB2A259008ACE21 /* test_canned_recipe_response.json in Resources */ = {isa = PBXBuildFile; fileRef = 65330E8F1DB2A259008ACE21 /* test_canned_recipe_response.json */; };
 		65330E951DB2A259008ACE21 /* test_canned_search_response.json in Resources */ = {isa = PBXBuildFile; fileRef = 65330E901DB2A259008ACE21 /* test_canned_search_response.json */; };
+		65330E9E1DB2BB77008ACE21 /* GTMNSString+HTML.m in Sources */ = {isa = PBXBuildFile; fileRef = 65330E991DB2BB77008ACE21 /* GTMNSString+HTML.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		65330EA01DB2BB77008ACE21 /* NSString+HTML.m in Sources */ = {isa = PBXBuildFile; fileRef = 65330E9C1DB2BB77008ACE21 /* NSString+HTML.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		65DA68E81DB21F6500C165FC /* SRCSearchEngine.m in Sources */ = {isa = PBXBuildFile; fileRef = 65DA68E71DB21F6500C165FC /* SRCSearchEngine.m */; };
 		65DA68F11DB2855F00C165FC /* SRCF2FServiceTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 65DA68F01DB2855F00C165FC /* SRCF2FServiceTests.m */; };
 		65DD91781DB165770063121C /* PMKPromise+Hang.m in Sources */ = {isa = PBXBuildFile; fileRef = 65DD911C1DB165770063121C /* PMKPromise+Hang.m */; };
@@ -27,7 +29,6 @@
 		65DD917C1DB165770063121C /* PMKPromise+When.m in Sources */ = {isa = PBXBuildFile; fileRef = 65DD91201DB165770063121C /* PMKPromise+When.m */; };
 		65DD917D1DB165770063121C /* PMKPromise+Zalgo.m in Sources */ = {isa = PBXBuildFile; fileRef = 65DD91211DB165770063121C /* PMKPromise+Zalgo.m */; };
 		65DD917E1DB165770063121C /* PMKPromise.m in Sources */ = {isa = PBXBuildFile; fileRef = 65DD91221DB165770063121C /* PMKPromise.m */; };
-		65DD91861DB165770063121C /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = 65DD913C1DB165770063121C /* LICENSE */; };
 		65DD918C1DB165770063121C /* SDImageCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 65DD91491DB165770063121C /* SDImageCache.m */; };
 		65DD918D1DB165770063121C /* SDImageCacheConfig.m in Sources */ = {isa = PBXBuildFile; fileRef = 65DD914B1DB165770063121C /* SDImageCacheConfig.m */; };
 		65DD918E1DB165770063121C /* SDWebImageCompat.m in Sources */ = {isa = PBXBuildFile; fileRef = 65DD914D1DB165770063121C /* SDWebImageCompat.m */; };
@@ -86,6 +87,14 @@
 		65330E8E1DB2A259008ACE21 /* SRCF2FTestURLProtocol.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SRCF2FTestURLProtocol.m; path = F2FService/SRCF2FTestURLProtocol.m; sourceTree = "<group>"; };
 		65330E8F1DB2A259008ACE21 /* test_canned_recipe_response.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = test_canned_recipe_response.json; path = F2FService/test_canned_recipe_response.json; sourceTree = "<group>"; };
 		65330E901DB2A259008ACE21 /* test_canned_search_response.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = test_canned_search_response.json; path = F2FService/test_canned_search_response.json; sourceTree = "<group>"; };
+		65330E971DB2BB77008ACE21 /* GTMDefines.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GTMDefines.h; sourceTree = "<group>"; };
+		65330E981DB2BB77008ACE21 /* GTMNSString+HTML.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "GTMNSString+HTML.h"; sourceTree = "<group>"; };
+		65330E991DB2BB77008ACE21 /* GTMNSString+HTML.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "GTMNSString+HTML.m"; sourceTree = "<group>"; };
+		65330E9A1DB2BB77008ACE21 /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
+		65330E9B1DB2BB77008ACE21 /* NSString+HTML.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+HTML.h"; sourceTree = "<group>"; };
+		65330E9C1DB2BB77008ACE21 /* NSString+HTML.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+HTML.m"; sourceTree = "<group>"; };
+		65330E9D1DB2BB77008ACE21 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		65330EA21DB2BC9C008ACE21 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		65DA68E61DB21F6500C165FC /* SRCSearchEngine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SRCSearchEngine.h; sourceTree = "<group>"; };
 		65DA68E71DB21F6500C165FC /* SRCSearchEngine.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SRCSearchEngine.m; sourceTree = "<group>"; };
 		65DA68F01DB2855F00C165FC /* SRCF2FServiceTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SRCF2FServiceTests.m; sourceTree = "<group>"; };
@@ -190,9 +199,24 @@
 			name = F2FService;
 			sourceTree = "<group>";
 		};
+		65330E961DB2BB77008ACE21 /* GTMNSString-HTML */ = {
+			isa = PBXGroup;
+			children = (
+				65330E971DB2BB77008ACE21 /* GTMDefines.h */,
+				65330E981DB2BB77008ACE21 /* GTMNSString+HTML.h */,
+				65330E991DB2BB77008ACE21 /* GTMNSString+HTML.m */,
+				65330E9A1DB2BB77008ACE21 /* LICENSE */,
+				65330E9B1DB2BB77008ACE21 /* NSString+HTML.h */,
+				65330E9C1DB2BB77008ACE21 /* NSString+HTML.m */,
+				65330E9D1DB2BB77008ACE21 /* README.md */,
+			);
+			path = "GTMNSString-HTML";
+			sourceTree = "<group>";
+		};
 		65DD90FD1DB165770063121C /* Vendor */ = {
 			isa = PBXGroup;
 			children = (
+				65330E961DB2BB77008ACE21 /* GTMNSString-HTML */,
 				65DD90FE1DB165770063121C /* PromiseKit */,
 				65DD913B1DB165770063121C /* SDWebImage */,
 			);
@@ -300,6 +324,7 @@
 		65E712811DB16247009574CD = {
 			isa = PBXGroup;
 			children = (
+				65330EA21DB2BC9C008ACE21 /* README.md */,
 				65E7128C1DB16247009574CD /* SocialRecipeCatalog */,
 				65E712A91DB16248009574CD /* SocialRecipeCatalogTests */,
 				65E712B41DB16248009574CD /* SocialRecipeCatalogUITests */,
@@ -474,7 +499,6 @@
 				65330E941DB2A259008ACE21 /* test_canned_recipe_response.json in Resources */,
 				65330E951DB2A259008ACE21 /* test_canned_search_response.json in Resources */,
 				65E7129D1DB16247009574CD /* Assets.xcassets in Resources */,
-				65DD91861DB165770063121C /* LICENSE in Resources */,
 				65E7129B1DB16247009574CD /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -513,6 +537,7 @@
 				65DD917C1DB165770063121C /* PMKPromise+When.m in Sources */,
 				65DD91911DB165770063121C /* SDWebImageDownloaderOperation.m in Sources */,
 				65DD91791DB165770063121C /* PMKPromise+Join.m in Sources */,
+				65330E9E1DB2BB77008ACE21 /* GTMNSString+HTML.m in Sources */,
 				65DD91A41DB190190063121C /* SRCSignal.m in Sources */,
 				65DD91901DB165770063121C /* SDWebImageDownloader.m in Sources */,
 				65330E7B1DB29C77008ACE21 /* UIView+WebCacheOperation.m in Sources */,
@@ -524,6 +549,7 @@
 				65330E7E1DB29C97008ACE21 /* NSImage+WebCache.m in Sources */,
 				65330E871DB29CE6008ACE21 /* UIImage+MultiFormat.m in Sources */,
 				65DD91931DB165770063121C /* SDWebImagePrefetcher.m in Sources */,
+				65330EA01DB2BB77008ACE21 /* NSString+HTML.m in Sources */,
 				65DA68E81DB21F6500C165FC /* SRCSearchEngine.m in Sources */,
 				65DD918D1DB165770063121C /* SDImageCacheConfig.m in Sources */,
 				65DD918E1DB165770063121C /* SDWebImageCompat.m in Sources */,
@@ -676,6 +702,7 @@
 				HEADER_SEARCH_PATHS = (
 					"$(SRCROOT)/SocialRecipeCatalog/Vendor/PromiseKit/Sources/",
 					"$(SRCROOT)/SocialRecipeCatalog/Vendor/SDWebImage/",
+					"$(SRCROOT)/SocialRecipeCatalog/Vendor/",
 				);
 				INFOPLIST_FILE = SocialRecipeCatalog/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
@@ -693,6 +720,7 @@
 				HEADER_SEARCH_PATHS = (
 					"$(SRCROOT)/SocialRecipeCatalog/Vendor/PromiseKit/Sources/",
 					"$(SRCROOT)/SocialRecipeCatalog/Vendor/SDWebImage/",
+					"$(SRCROOT)/SocialRecipeCatalog/Vendor/",
 				);
 				INFOPLIST_FILE = SocialRecipeCatalog/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;

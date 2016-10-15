@@ -7,6 +7,7 @@
 //
 
 #import "SRCF2FService.h"
+#import <GTMNSString-HTML/NSString+HTML.h>
 #import <PromiseKit/Promise.h>
 #import "SRCF2FRecipe.h"
 #import "SRCF2FTestURLProtocol.h"
@@ -112,7 +113,7 @@ static NSString * const kSRCAPIKey = @"77c80ca9368e24336a7185a9e569e599";
     recipe.publisher_url = [NSURL URLWithString:dict[@"publisher_url"]];
     recipe.publisher = dict[@"publisher"];
     recipe.f2f_url = [NSURL URLWithString:dict[@"f2f_url"]];
-    recipe.title = dict[@"title"];
+    recipe.title = [(NSString *)dict[@"title"] stringByDecodingHTMLEntities];
 
     id socialRankJsonValue = dict[@"social_rank"];
     if ([socialRankJsonValue isKindOfClass:[NSNumber class]]) {
