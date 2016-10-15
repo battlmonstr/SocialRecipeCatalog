@@ -7,6 +7,7 @@
 //
 
 #import "SRCDetailViewController.h"
+#import "SRCF2FRecipe.h"
 
 @interface SRCDetailViewController ()
 
@@ -16,7 +17,7 @@
 
 #pragma mark - Managing the detail item
 
-- (void)setDetailItem:(id)newDetailItem {
+- (void)setDetailItem:(SRCF2FRecipe *)newDetailItem {
     if (_detailItem != newDetailItem) {
         _detailItem = newDetailItem;
             
@@ -28,6 +29,7 @@
 - (void)configureView {
     // Update the user interface for the detail item.
     if (self.detailItem) {
+        self.title = self.detailItem.title;
         self.detailDescriptionLabel.text = [self.detailItem description];
     }
 }

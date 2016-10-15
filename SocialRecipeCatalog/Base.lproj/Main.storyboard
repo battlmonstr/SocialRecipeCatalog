@@ -120,6 +120,9 @@
                             </connections>
                         </textField>
                     </navigationItem>
+                    <connections>
+                        <outlet property="searchTextField" destination="dc5-oY-hWE" id="Qs8-YB-QkK"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Rux-fX-hf1" sceneMemberID="firstResponder"/>
             </objects>

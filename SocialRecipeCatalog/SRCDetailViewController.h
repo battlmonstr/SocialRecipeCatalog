@@ -7,10 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
+@class SRCF2FRecipe;
 
 @interface SRCDetailViewController : UIViewController
 
-@property (strong, nonatomic) id detailItem;
+@property (strong, nonatomic) SRCF2FRecipe *detailItem;
 @property (weak, nonatomic) IBOutlet UILabel *detailDescriptionLabel;
 
 @end

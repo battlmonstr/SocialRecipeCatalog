@@ -13,6 +13,7 @@
 @interface SRCMasterViewController : UITableViewController
 
 @property (strong, nonatomic) SRCDetailViewController *detailViewController;
+@property (weak, nonatomic) IBOutlet UITextField *searchTextField;
 
 - (IBAction)textFieldDidChange:(UITextField *)searchTextField;
 
