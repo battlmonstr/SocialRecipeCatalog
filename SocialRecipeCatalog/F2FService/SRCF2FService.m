@@ -40,8 +40,7 @@ static NSString * const kSRCAPIKey = @"77c80ca9368e24336a7185a9e569e599";
     _baseURLScheme = [NSURL URLWithString:kSRCBaseURLString].scheme;
     Class protocolClass = NULL;
 
-    // TODO: reset to NO
-    BOOL isTestMode = YES;
+    BOOL isTestMode = NO;
     if ([[NSProcessInfo processInfo].arguments containsObject:@"isUITesting"]) {
         isTestMode = YES;
     }
