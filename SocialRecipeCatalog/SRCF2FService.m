@@ -9,11 +9,51 @@
 #import "SRCF2FService.h"
 #import <PromiseKit/Promise.h>
 #import "SRCF2FRecipe.h"
+#import "SRCF2FTestURLProtocol.h"
 
 static NSString * const kSRCBaseURLString = @"http://food2fork.com/api/";
 static NSString * const kSRCAPIKey = @"77c80ca9368e24336a7185a9e569e599";
 
+
+@interface SRCF2FService ()
+
+@property (readonly) NSURLSession *urlSession;
+@property (readonly) NSString *baseURLScheme;
+
+@end
+
+
 @implementation SRCF2FService
+
+@synthesize urlSession = _urlSession;
+@synthesize baseURLScheme = _baseURLScheme;
+
+- (instancetype)init
+{
+    self = [super init];
+    if (self == nil) return nil;
+
+    _baseURLScheme = [NSURL URLWithString:kSRCBaseURLString].scheme;
+    Class protocolClass = NULL;
+
+    BOOL isTestMode = YES;
+    if (isTestMode) {
+        _baseURLScheme = [SRCF2FTestURLProtocol scheme];
+        protocolClass = [SRCF2FTestURLProtocol class];
+    }
+    
+    _urlSession = [SRCF2FService createURLSessionWithProtocol:protocolClass];
+    return self;
+}
+
++ (NSURLSession *)createURLSessionWithProtocol:(Class)protocolClass
+{
+    NSURLSessionConfiguration *config = [NSURLSessionConfiguration defaultSessionConfiguration];
+    if (protocolClass) {
+        config.protocolClasses = @[ protocolClass ];
+    }
+    return [NSURLSession sessionWithConfiguration:config];
+}
 
 + (id)decodeJSONResponse:(NSURLResponse *)response withData:(NSData *)data error:(NSError **)error
 {
@@ -111,12 +151,16 @@ static NSString * const kSRCAPIKey = @"77c80ca9368e24336a7185a9e569e599";
 - (PMKPromise *)search:(NSString *)query page:(NSUInteger)page
 {
     NSString *encodedQuery = [query stringByAddingPercentEncodingWithAllowedCharacters:[NSCharacterSet URLQueryAllowedCharacterSet]];
-    NSString *urlString = [NSString stringWithFormat:@"search?sort=r&page=%d&q=%@&key=%@",
+    NSURLComponents *urlComponents = [[NSURLComponents alloc] initWithString:kSRCBaseURLString];
+    urlComponents.scheme = self.baseURLScheme;
+    urlComponents.path = [urlComponents.path stringByAppendingString:@"search"];
+    urlComponents.query = [NSString stringWithFormat:@"sort=r&page=%d&q=%@&key=%@",
        (int)page + 1, encodedQuery, kSRCAPIKey];
-    NSURL *url = [NSURL URLWithString:[kSRCBaseURLString stringByAppendingString:urlString]];
+    NSURL *url = urlComponents.URL;
+    __weak SRCF2FService *weakSelf = self;
     
     return [PMKPromise promiseWithResolver:^(PMKResolver resolver) {
-        NSURLSession *session = [NSURLSession sharedSession];
+        NSURLSession *session = weakSelf.urlSession;
         NSURLSessionDataTask *task = [session dataTaskWithURL:url completionHandler:^(NSData * _Nullable data,
                 NSURLResponse * _Nullable response, NSError * _Nullable networkError) {
             if (networkError) {
