@@ -174,6 +174,28 @@ static NSString * const kSRCAPIKey = @"77c80ca9368e24336a7185a9e569e599";
     return recipe;
 }
 
+- (PMKPromise *)networkRequestPromiseForURL:(NSURL *)url withDecoder:(PMKPromise *(^)(id jsonObject))decoder
+{
+    __weak SRCF2FService *weakSelf = self;
+    return [PMKPromise promiseWithResolver:^(PMKResolver resolver) {
+        NSURLSession *session = weakSelf.urlSession;
+        NSURLSessionDataTask *task = [session dataTaskWithURL:url completionHandler:^(NSData * _Nullable data,
+                NSURLResponse * _Nullable response, NSError * _Nullable networkError) {
+            if (networkError) {
+                resolver(networkError);
+                return;
+            }
+            NSError *error = nil;
+            id result = [SRCF2FService decodeJSONResponse:response withData:data error:&error];
+            resolver(error ? error : result);
+        }];
+        [task resume];
+    }]
+    .thenInBackground(^(id jsonObject) {
+        return decoder(jsonObject);
+    });
+}
+
 - (PMKPromise *)search:(NSString *)query page:(NSUInteger)page
 {
     NSString *encodedQuery = [query stringByAddingPercentEncodingWithAllowedCharacters:[NSCharacterSet URLQueryAllowedCharacterSet]];
@@ -183,29 +205,14 @@ static NSString * const kSRCAPIKey = @"77c80ca9368e24336a7185a9e569e599";
     urlComponents.query = [NSString stringWithFormat:@"sort=r&page=%d&q=%@&key=%@",
        (int)page + 1, encodedQuery, kSRCAPIKey];
     NSURL *url = urlComponents.URL;
-    __weak SRCF2FService *weakSelf = self;
     
-    return [PMKPromise promiseWithResolver:^(PMKResolver resolver) {
-        NSURLSession *session = weakSelf.urlSession;
-        NSURLSessionDataTask *task = [session dataTaskWithURL:url completionHandler:^(NSData * _Nullable data,
-                NSURLResponse * _Nullable response, NSError * _Nullable networkError) {
-            if (networkError) {
-                resolver(networkError);
-                return;
-            }
-            NSError *error = nil;
-            id result = [SRCF2FService decodeJSONResponse:response withData:data error:&error];
-            resolver(error ? error : result);
-        }];
-        [task resume];
-    }]
-    .thenInBackground(^(id jsonObject) {
+    return [self networkRequestPromiseForURL:url withDecoder:^(id jsonObject) {
         return [PMKPromise promiseWithResolver:^(PMKResolver resolver) {
             NSError *error = nil;
             id result = [SRCF2FService decodeRecipeListFromJSONObject:jsonObject error:&error];
             resolver(error ? error : result);
         }];
-    });
+    }];
 }
 
 - (PMKPromise *)getRecipe:(NSString *)recipeID
@@ -215,29 +222,14 @@ static NSString * const kSRCAPIKey = @"77c80ca9368e24336a7185a9e569e599";
     urlComponents.path = [urlComponents.path stringByAppendingString:@"get"];
     urlComponents.query = [NSString stringWithFormat:@"rId=%@&key=%@", recipeID, kSRCAPIKey];
     NSURL *url = urlComponents.URL;
-    __weak SRCF2FService *weakSelf = self;
     
-    return [PMKPromise promiseWithResolver:^(PMKResolver resolver) {
-        NSURLSession *session = weakSelf.urlSession;
-        NSURLSessionDataTask *task = [session dataTaskWithURL:url completionHandler:^(NSData * _Nullable data,
-                NSURLResponse * _Nullable response, NSError * _Nullable networkError) {
-            if (networkError) {
-                resolver(networkError);
-                return;
-            }
-            NSError *error = nil;
-            id result = [SRCF2FService decodeJSONResponse:response withData:data error:&error];
-            resolver(error ? error : result);
-        }];
-        [task resume];
-    }]
-    .thenInBackground(^(id jsonObject) {
+    return [self networkRequestPromiseForURL:url withDecoder:^(id jsonObject) {
         return [PMKPromise promiseWithResolver:^(PMKResolver resolver) {
             NSError *error = nil;
             id result = [SRCF2FService decodeRecipeFromJSONObject:jsonObject error:&error];
             resolver(error ? error : result);
         }];
-    });
+    }];
 }
 
 @end
