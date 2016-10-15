@@ -93,7 +93,7 @@ typedef enum
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     switch (section) {
-        case SRCRecipeInfoSectionIngredients: return 0;
+        case SRCRecipeInfoSectionIngredients: return self.detailItem.ingredients.count;
         case SRCRecipeInfoSectionLinks: return 2;
         default: return 0;
     }
@@ -104,10 +104,20 @@ typedef enum
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     NSInteger section = indexPath.section;
+    
     if (section == SRCRecipeInfoSectionIngredients) {
-        // TODO
-        return nil;
+        UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"RecipeIngredientCellId"];
+        if (cell == nil)
+        {
+            cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"RecipeIngredientCellId"];
+            cell.textLabel.adjustsFontSizeToFitWidth = YES;
+            cell.selectionStyle = UITableViewCellSelectionStyleNone;
+        }
+
+        cell.textLabel.text = self.detailItem.ingredients[indexPath.row];
+        return cell;
     }
+    
     if (section == SRCRecipeInfoSectionLinks) {
         UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"RecipeInfoCellId"];
         if (cell == nil)
@@ -134,6 +144,7 @@ typedef enum
         
         return cell;
     }
+    
     return nil;
 }
 
