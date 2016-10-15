@@ -156,7 +156,7 @@
                     </tableView>
                     <navigationItem key="navigationItem" id="Zdf-7t-Un8">
                         <nil key="title"/>
-                        <textField key="titleView" opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" id="dc5-oY-hWE" userLabel="searchTextField">
+                        <textField key="titleView" opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" clearButtonMode="always" id="dc5-oY-hWE" userLabel="searchTextField">
                             <rect key="frame" x="20" y="7" width="560" height="30"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
