@@ -21,7 +21,8 @@
 
 @implementation SRCF2FServiceTests
 
-- (void)testAllRecipeFieldsAreDecoded {
+- (void)testAllRecipeFieldsAreDecoded
+{
     NSDictionary *dict = @{
         @"source_url": @"http://mysite.com/recipe123",
         @"image_url": @"http://mysite.com/recipe123.png",
