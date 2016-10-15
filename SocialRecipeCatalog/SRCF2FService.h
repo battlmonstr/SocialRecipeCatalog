@@ -12,5 +12,6 @@
 @interface SRCF2FService : NSObject
 
 - (PMKPromise *)search:(NSString *)query page:(NSUInteger)page;
+- (PMKPromise *)getRecipe:(NSString *)recipeID;
 
 @end

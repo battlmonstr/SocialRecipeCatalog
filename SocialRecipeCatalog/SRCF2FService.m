@@ -113,6 +113,11 @@ static NSString * const kSRCAPIKey = @"77c80ca9368e24336a7185a9e569e599";
         recipe.social_rank = [socialRankNum doubleValue];
     }
     
+    id ingredientsJsonValue = dict[@"ingredients"];
+    if ([ingredientsJsonValue isKindOfClass:[NSArray class]]) {
+        recipe.ingredients = ingredientsJsonValue;
+    }
+    
     return recipe;
 }
 
@@ -148,6 +153,27 @@ static NSString * const kSRCAPIKey = @"77c80ca9368e24336a7185a9e569e599";
     return recipes;
 }
 
++ (SRCF2FRecipe *)decodeRecipeFromJSONObject:(id)jsonObject error:(NSError **)error
+{
+    NSAssert(![NSThread isMainThread], @"Invalid thread for network data processing.");
+
+    if (![jsonObject isKindOfClass:[NSDictionary class]]) {
+        *error = [self parsingError:@"Recipe has an invalid top-level object."];
+        return nil;
+    }
+    NSDictionary *jsonDict = (NSDictionary *)jsonObject;
+
+    id jsonRecipe = jsonDict[@"recipe"];
+    if (![jsonRecipe isKindOfClass:[NSDictionary class]]) {
+        *error = [self parsingError:@"Recipe['recipe'] element is not a dictionary."];
+        return nil;
+    }
+    NSDictionary *jsonRecipeDict = (NSDictionary *)jsonRecipe;
+    
+    SRCF2FRecipe *recipe = [self decodeRecipeFromDictionary:jsonRecipeDict];
+    return recipe;
+}
+
 - (PMKPromise *)search:(NSString *)query page:(NSUInteger)page
 {
     NSString *encodedQuery = [query stringByAddingPercentEncodingWithAllowedCharacters:[NSCharacterSet URLQueryAllowedCharacterSet]];
@@ -177,6 +203,38 @@ static NSString * const kSRCAPIKey = @"77c80ca9368e24336a7185a9e569e599";
         return [PMKPromise promiseWithResolver:^(PMKResolver resolver) {
             NSError *error = nil;
             id result = [SRCF2FService decodeRecipeListFromJSONObject:jsonObject error:&error];
+            resolver(error ? error : result);
+        }];
+    });
+}
+
+- (PMKPromise *)getRecipe:(NSString *)recipeID
+{
+    NSURLComponents *urlComponents = [[NSURLComponents alloc] initWithString:kSRCBaseURLString];
+    //urlComponents.scheme = self.baseURLScheme;
+    urlComponents.path = [urlComponents.path stringByAppendingString:@"get"];
+    urlComponents.query = [NSString stringWithFormat:@"rId=%@&key=%@", recipeID, kSRCAPIKey];
+    NSURL *url = urlComponents.URL;
+    __weak SRCF2FService *weakSelf = self;
+    
+    return [PMKPromise promiseWithResolver:^(PMKResolver resolver) {
+        NSURLSession *session = weakSelf.urlSession;
+        NSURLSessionDataTask *task = [session dataTaskWithURL:url completionHandler:^(NSData * _Nullable data,
+                NSURLResponse * _Nullable response, NSError * _Nullable networkError) {
+            if (networkError) {
+                resolver(networkError);
+                return;
+            }
+            NSError *error = nil;
+            id result = [SRCF2FService decodeJSONResponse:response withData:data error:&error];
+            resolver(error ? error : result);
+        }];
+        [task resume];
+    }]
+    .thenInBackground(^(id jsonObject) {
+        return [PMKPromise promiseWithResolver:^(PMKResolver resolver) {
+            NSError *error = nil;
+            id result = [SRCF2FService decodeRecipeFromJSONObject:jsonObject error:&error];
             resolver(error ? error : result);
         }];
     });

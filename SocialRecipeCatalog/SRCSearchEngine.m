@@ -16,6 +16,7 @@
 }
 
 @synthesize resultSignal = _resultSignal;
+@synthesize service = _service;
 
 - (instancetype)initWithQuerySignal:(SRCSignal *)querySignal
 {

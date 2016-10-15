@@ -68,6 +68,7 @@
         NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
         SRCF2FRecipe *object = self.objects[indexPath.row];
         SRCDetailViewController *controller = (SRCDetailViewController *)[[segue destinationViewController] topViewController];
+        controller.service = self.searchEngine.service;
         [controller setDetailItem:object];
         controller.navigationItem.leftBarButtonItem = self.splitViewController.displayModeButtonItem;
         controller.navigationItem.leftItemsSupplementBackButton = YES;

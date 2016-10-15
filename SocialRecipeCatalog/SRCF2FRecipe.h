@@ -18,5 +18,6 @@
 @property NSURL *f2f_url;
 @property double social_rank;
 @property NSString *title;
+@property NSArray<NSString *> *ingredients;
 
 @end

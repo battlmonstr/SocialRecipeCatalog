@@ -10,6 +10,8 @@
 #import "SRCF2FRecipe.h"
 #import <SDWebImage/UIImageView+WebCache.h>
 #import <SafariServices/SafariServices.h>
+#import "SRCF2FService.h"
+#import <PromiseKit/Promise.h>
 
 @interface SRCDetailViewController () <UITableViewDelegate, UITableViewDataSource>
 
@@ -25,7 +27,29 @@
             
         // Update the view.
         [self configureView];
+        
+        if (_detailItem.ingredients == nil) {
+            [self loadIngredients];
+        }
     }
+}
+
+- (void)loadIngredients
+{
+    __weak SRCDetailViewController *weakSelf = self;
+    [self.service getRecipe:self.detailItem.recipe_id]
+        .then(^(SRCF2FRecipe *recipe) {
+            //NSLog(@"%@", recipe);
+            if (weakSelf == nil) return;
+            if ([recipe.recipe_id isEqualToString:weakSelf.detailItem.recipe_id]) {
+                SRCDetailViewController *strongSelf = weakSelf;
+                strongSelf->_detailItem = recipe;
+            }
+            [weakSelf.infoTableView reloadData];
+        })
+        .catch(^(NSError *error) {
+            NSLog(@"getRecipe error: %@", error);
+        });
 }
 
 - (void)configureView {
