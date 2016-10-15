@@ -13,6 +13,13 @@
 #import "SRCF2FService.h"
 #import <PromiseKit/Promise.h>
 
+typedef enum
+{
+    SRCRecipeInfoSectionIngredients,
+    SRCRecipeInfoSectionLinks,
+} SRCRecipeInfoSection;
+
+
 @interface SRCDetailViewController () <UITableViewDelegate, UITableViewDataSource>
 
 @end
@@ -86,8 +93,8 @@
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     switch (section) {
-        case 0: return 0;
-        case 1: return 2;
+        case SRCRecipeInfoSectionIngredients: return 0;
+        case SRCRecipeInfoSectionLinks: return 2;
         default: return 0;
     }
     return 0;
@@ -97,11 +104,11 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     NSInteger section = indexPath.section;
-    if (section == 0) {
+    if (section == SRCRecipeInfoSectionIngredients) {
         // TODO
         return nil;
     }
-    if (section == 1) {
+    if (section == SRCRecipeInfoSectionLinks) {
         UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"RecipeInfoCellId"];
         if (cell == nil)
         {
@@ -140,8 +147,8 @@
 - (nullable NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section
 {
     switch (section) {
-        case 0: return NSLocalizedString(@"Ingredients", nil);
-        case 1: return NSLocalizedString(@"Info", nil);
+        case SRCRecipeInfoSectionIngredients: return NSLocalizedString(@"Ingredients", nil);
+        case SRCRecipeInfoSectionLinks: return NSLocalizedString(@"Info", nil);
         default: return @"???";
     }
 }
@@ -149,7 +156,7 @@
 // UITableViewDelegate
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    if (indexPath.section == 1) {
+    if (indexPath.section == SRCRecipeInfoSectionLinks) {
         NSURL *url = indexPath.row ? self.detailItem.source_url : self.detailItem.f2f_url;
         if (url) {
             SFSafariViewController *safariVC = [[SFSafariViewController alloc] initWithURL:url];
