@@ -72,7 +72,7 @@ static NSString * const kSRCAPIKey = @"77c80ca9368e24336a7185a9e569e599";
         NSInteger statusCode = [httpResponse statusCode];
         if ((statusCode < 200) || (statusCode >= 300)) {
             NSDictionary *info = @{
-                NSLocalizedDescriptionKey: @"The server returned a bad HTTP response code",
+                NSLocalizedDescriptionKey: [NSString stringWithFormat:@"The server returned a bad HTTP response code: %d", statusCode],
                 NSURLErrorFailingURLStringErrorKey: response.URL.absoluteString,
                 NSURLErrorFailingURLErrorKey: response.URL
             };

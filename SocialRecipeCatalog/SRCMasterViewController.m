@@ -56,6 +56,11 @@
         })
         .catch(^(NSError *error) {
             NSLog(@"searchEngine error: %@", error);
+            
+            UIAlertView *errorAlert = [[UIAlertView alloc] initWithTitle:[error localizedDescription]
+                message:[error localizedRecoverySuggestion] delegate:nil
+                cancelButtonTitle:NSLocalizedString(@"Dismiss", nil) otherButtonTitles:nil];
+            [errorAlert show];
         })
         .finally(^() {
             [weakSelf.activityIndicator stopAnimating];
