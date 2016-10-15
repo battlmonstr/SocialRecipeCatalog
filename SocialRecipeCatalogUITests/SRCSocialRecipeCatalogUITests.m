@@ -12,7 +12,7 @@
 
 @end
 
-@implementation SocialRecipeCatalogUITests
+@implementation SRCSocialRecipeCatalogUITests
 
 - (void)setUp {
     [super setUp];

@@ -11,6 +11,7 @@
 		65DA68EA1DB22C0E00C165FC /* test_canned_search_response.json in Resources */ = {isa = PBXBuildFile; fileRef = 65DA68E91DB22C0E00C165FC /* test_canned_search_response.json */; };
 		65DA68ED1DB22C7900C165FC /* SRCF2FTestURLProtocol.m in Sources */ = {isa = PBXBuildFile; fileRef = 65DA68EC1DB22C7900C165FC /* SRCF2FTestURLProtocol.m */; };
 		65DA68EF1DB280C200C165FC /* test_canned_recipe_response.json in Resources */ = {isa = PBXBuildFile; fileRef = 65DA68EE1DB280C200C165FC /* test_canned_recipe_response.json */; };
+		65DA68F11DB2855F00C165FC /* SRCF2FServiceTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 65DA68F01DB2855F00C165FC /* SRCF2FServiceTests.m */; };
 		65DD916B1DB165770063121C /* ACAccountStore+PromiseKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 65DD91031DB165770063121C /* ACAccountStore+PromiseKit.m */; };
 		65DD916C1DB165770063121C /* AVAudioSession+PromiseKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 65DD91051DB165770063121C /* AVAudioSession+PromiseKit.m */; };
 		65DD916D1DB165770063121C /* CALayer+PromiseKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 65DD91071DB165770063121C /* CALayer+PromiseKit.m */; };
@@ -65,7 +66,6 @@
 		65E7129B1DB16247009574CD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 65E712991DB16247009574CD /* Main.storyboard */; };
 		65E7129D1DB16247009574CD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 65E7129C1DB16247009574CD /* Assets.xcassets */; };
 		65E712A01DB16247009574CD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 65E7129E1DB16247009574CD /* LaunchScreen.storyboard */; };
-		65E712AB1DB16248009574CD /* SRCSocialRecipeCatalogTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 65E712AA1DB16248009574CD /* SRCSocialRecipeCatalogTests.m */; };
 		65E712B61DB16248009574CD /* SRCSocialRecipeCatalogUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 65E712B51DB16248009574CD /* SRCSocialRecipeCatalogUITests.m */; };
 /* End PBXBuildFile section */
 
@@ -93,6 +93,7 @@
 		65DA68EB1DB22C7900C165FC /* SRCF2FTestURLProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SRCF2FTestURLProtocol.h; sourceTree = "<group>"; };
 		65DA68EC1DB22C7900C165FC /* SRCF2FTestURLProtocol.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SRCF2FTestURLProtocol.m; sourceTree = "<group>"; };
 		65DA68EE1DB280C200C165FC /* test_canned_recipe_response.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = test_canned_recipe_response.json; sourceTree = "<group>"; };
+		65DA68F01DB2855F00C165FC /* SRCF2FServiceTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SRCF2FServiceTests.m; sourceTree = "<group>"; };
 		65DD90FF1DB165770063121C /* LICENSE.text */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = LICENSE.text; sourceTree = "<group>"; };
 		65DD91001DB165770063121C /* README.markdown */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.markdown; sourceTree = "<group>"; };
 		65DD91021DB165770063121C /* ACAccountStore+PromiseKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "ACAccountStore+PromiseKit.h"; sourceTree = "<group>"; };
@@ -206,7 +207,6 @@
 		65E7129F1DB16247009574CD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		65E712A11DB16247009574CD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		65E712A61DB16248009574CD /* SocialRecipeCatalogTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SocialRecipeCatalogTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		65E712AA1DB16248009574CD /* SRCSocialRecipeCatalogTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SRCSocialRecipeCatalogTests.m; sourceTree = "<group>"; };
 		65E712AC1DB16248009574CD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		65E712B11DB16248009574CD /* SocialRecipeCatalogUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SocialRecipeCatalogUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		65E712B51DB16248009574CD /* SRCSocialRecipeCatalogUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SRCSocialRecipeCatalogUITests.m; sourceTree = "<group>"; };
@@ -449,8 +449,8 @@
 		65E712A91DB16248009574CD /* SocialRecipeCatalogTests */ = {
 			isa = PBXGroup;
 			children = (
-				65E712AA1DB16248009574CD /* SRCSocialRecipeCatalogTests.m */,
 				65E712AC1DB16248009574CD /* Info.plist */,
+				65DA68F01DB2855F00C165FC /* SRCF2FServiceTests.m */,
 			);
 			path = SocialRecipeCatalogTests;
 			sourceTree = "<group>";
@@ -656,7 +656,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				65E712AB1DB16248009574CD /* SRCSocialRecipeCatalogTests.m in Sources */,
+				65DA68F11DB2855F00C165FC /* SRCF2FServiceTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
