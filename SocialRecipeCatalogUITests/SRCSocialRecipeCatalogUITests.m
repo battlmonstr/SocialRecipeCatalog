@@ -46,7 +46,7 @@
     XCTAssert(textField.exists);
     XCTAssert(textField.isHittable);
     [textField tap];
-    [textField typeText:@"asd"];
+    [textField typeText:@"a"];
     
     XCUIElementQuery *tablesQuery = app.tables;
     XCUIElement *recipeRow = tablesQuery.staticTexts[@"Penne a la Betsy"];
