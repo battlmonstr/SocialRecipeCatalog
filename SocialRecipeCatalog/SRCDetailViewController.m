@@ -8,6 +8,7 @@
 
 #import "SRCDetailViewController.h"
 #import "SRCF2FRecipe.h"
+#import <SDWebImage/UIImageView+WebCache.h>
 
 @interface SRCDetailViewController ()
 
@@ -30,7 +31,11 @@
     // Update the user interface for the detail item.
     if (self.detailItem) {
         self.title = self.detailItem.title;
-        self.detailDescriptionLabel.text = [self.detailItem description];
+        if (self.detailItem.image_url) {
+            [self.imageView sd_setImageWithURL:self.detailItem.image_url placeholderImage:nil];
+        } else {
+            self.imageView.image = nil;
+        }
     }
 }
 

@@ -12,7 +12,7 @@
 @interface SRCDetailViewController : UIViewController
 
 @property (strong, nonatomic) SRCF2FRecipe *detailItem;
-@property (weak, nonatomic) IBOutlet UILabel *detailDescriptionLabel;
+@property (weak, nonatomic) IBOutlet UIImageView *imageView;
 
 @end
 
