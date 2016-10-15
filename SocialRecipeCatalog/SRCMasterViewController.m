@@ -8,10 +8,10 @@
 
 #import "SRCMasterViewController.h"
 #import "SRCDetailViewController.h"
-#import "SRCSignal.h"
-#import "SRCSearchEngine.h"
 #import "SRCF2FRecipe.h"
 #import "SRCF2FService.h"
+#import "SRCSearchEngine.h"
+#import "SRCSignal.h"
 
 @interface SRCMasterViewController ()
 

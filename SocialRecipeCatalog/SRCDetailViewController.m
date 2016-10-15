@@ -7,11 +7,11 @@
 //
 
 #import "SRCDetailViewController.h"
-#import "SRCF2FRecipe.h"
-#import <SDWebImage/UIImageView+WebCache.h>
 #import <SafariServices/SafariServices.h>
-#import "SRCF2FService.h"
+#import <SDWebImage/UIImageView+WebCache.h>
 #import <PromiseKit/Promise.h>
+#import "SRCF2FRecipe.h"
+#import "SRCF2FService.h"
 
 typedef enum
 {

@@ -7,8 +7,8 @@
 //
 
 #import <XCTest/XCTest.h>
-#import "SRCF2FService.h"
 #import "SRCF2FRecipe.h"
+#import "SRCF2FService.h"
 
 @interface SRCF2FServiceTests : XCTestCase
 

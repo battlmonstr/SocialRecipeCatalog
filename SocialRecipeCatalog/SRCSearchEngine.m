@@ -7,8 +7,8 @@
 //
 
 #import "SRCSearchEngine.h"
-#import "SRCSignal.h"
 #import "SRCF2FService.h"
+#import "SRCSignal.h"
 
 @implementation SRCSearchEngine
 {
