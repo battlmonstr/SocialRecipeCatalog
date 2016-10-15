@@ -27,7 +27,11 @@
 
 - (void)startLoading
 {
-    NSData *data = [NSData dataWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"test_canned_search_response" ofType:@"json"]];
+    NSString *responseName = [self.request.URL.path hasSuffix:@"/search"]
+        ? @"test_canned_search_response"
+        : @"test_canned_recipe_response";
+    NSData *data = [NSData dataWithContentsOfFile:[[NSBundle mainBundle] pathForResource:responseName ofType:@"json"]];
+    NSAssert(data, @"Test response data not found.");
     NSDictionary<NSString *, NSString *> *headers = @{
         @"Content-Type": @"application/json",
         @"Content-Length": [@(data.length) description],

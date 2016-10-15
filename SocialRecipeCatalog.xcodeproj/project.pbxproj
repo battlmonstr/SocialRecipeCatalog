@@ -10,6 +10,7 @@
 		65DA68E81DB21F6500C165FC /* SRCSearchEngine.m in Sources */ = {isa = PBXBuildFile; fileRef = 65DA68E71DB21F6500C165FC /* SRCSearchEngine.m */; };
 		65DA68EA1DB22C0E00C165FC /* test_canned_search_response.json in Resources */ = {isa = PBXBuildFile; fileRef = 65DA68E91DB22C0E00C165FC /* test_canned_search_response.json */; };
 		65DA68ED1DB22C7900C165FC /* SRCF2FTestURLProtocol.m in Sources */ = {isa = PBXBuildFile; fileRef = 65DA68EC1DB22C7900C165FC /* SRCF2FTestURLProtocol.m */; };
+		65DA68EF1DB280C200C165FC /* test_canned_recipe_response.json in Resources */ = {isa = PBXBuildFile; fileRef = 65DA68EE1DB280C200C165FC /* test_canned_recipe_response.json */; };
 		65DD916B1DB165770063121C /* ACAccountStore+PromiseKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 65DD91031DB165770063121C /* ACAccountStore+PromiseKit.m */; };
 		65DD916C1DB165770063121C /* AVAudioSession+PromiseKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 65DD91051DB165770063121C /* AVAudioSession+PromiseKit.m */; };
 		65DD916D1DB165770063121C /* CALayer+PromiseKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 65DD91071DB165770063121C /* CALayer+PromiseKit.m */; };
@@ -91,6 +92,7 @@
 		65DA68E91DB22C0E00C165FC /* test_canned_search_response.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = test_canned_search_response.json; sourceTree = "<group>"; };
 		65DA68EB1DB22C7900C165FC /* SRCF2FTestURLProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SRCF2FTestURLProtocol.h; sourceTree = "<group>"; };
 		65DA68EC1DB22C7900C165FC /* SRCF2FTestURLProtocol.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SRCF2FTestURLProtocol.m; sourceTree = "<group>"; };
+		65DA68EE1DB280C200C165FC /* test_canned_recipe_response.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = test_canned_recipe_response.json; sourceTree = "<group>"; };
 		65DD90FF1DB165770063121C /* LICENSE.text */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = LICENSE.text; sourceTree = "<group>"; };
 		65DD91001DB165770063121C /* README.markdown */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.markdown; sourceTree = "<group>"; };
 		65DD91021DB165770063121C /* ACAccountStore+PromiseKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "ACAccountStore+PromiseKit.h"; sourceTree = "<group>"; };
@@ -431,6 +433,7 @@
 				65DA68EB1DB22C7900C165FC /* SRCF2FTestURLProtocol.h */,
 				65DA68EC1DB22C7900C165FC /* SRCF2FTestURLProtocol.m */,
 				65DA68E91DB22C0E00C165FC /* test_canned_search_response.json */,
+				65DA68EE1DB280C200C165FC /* test_canned_recipe_response.json */,
 			);
 			path = SocialRecipeCatalog;
 			sourceTree = "<group>";
@@ -564,6 +567,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				65DA68EF1DB280C200C165FC /* test_canned_recipe_response.json in Resources */,
 				65E712A01DB16247009574CD /* LaunchScreen.storyboard in Resources */,
 				65E7129D1DB16247009574CD /* Assets.xcassets in Resources */,
 				65DA68EA1DB22C0E00C165FC /* test_canned_search_response.json in Resources */,

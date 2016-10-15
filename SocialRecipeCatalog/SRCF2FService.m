@@ -218,7 +218,7 @@ static NSString * const kSRCAPIKey = @"77c80ca9368e24336a7185a9e569e599";
 - (PMKPromise *)getRecipe:(NSString *)recipeID
 {
     NSURLComponents *urlComponents = [[NSURLComponents alloc] initWithString:kSRCBaseURLString];
-    //urlComponents.scheme = self.baseURLScheme;
+    urlComponents.scheme = self.baseURLScheme;
     urlComponents.path = [urlComponents.path stringByAppendingString:@"get"];
     urlComponents.query = [NSString stringWithFormat:@"rId=%@&key=%@", recipeID, kSRCAPIKey];
     NSURL *url = urlComponents.URL;
