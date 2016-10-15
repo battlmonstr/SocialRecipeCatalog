@@ -196,12 +196,18 @@ static NSString * const kSRCAPIKey = @"77c80ca9368e24336a7185a9e569e599";
     });
 }
 
+- (NSURLComponents *)urlComponentsForMethod:(NSString *)method
+{
+    NSURLComponents *urlComponents = [[NSURLComponents alloc] initWithString:kSRCBaseURLString];
+    urlComponents.scheme = self.baseURLScheme;
+    urlComponents.path = [urlComponents.path stringByAppendingString:method];
+    return urlComponents;
+}
+
 - (PMKPromise *)search:(NSString *)query page:(NSUInteger)page
 {
     NSString *encodedQuery = [query stringByAddingPercentEncodingWithAllowedCharacters:[NSCharacterSet URLQueryAllowedCharacterSet]];
-    NSURLComponents *urlComponents = [[NSURLComponents alloc] initWithString:kSRCBaseURLString];
-    urlComponents.scheme = self.baseURLScheme;
-    urlComponents.path = [urlComponents.path stringByAppendingString:@"search"];
+    NSURLComponents *urlComponents = [self urlComponentsForMethod:@"search"];
     urlComponents.query = [NSString stringWithFormat:@"sort=r&page=%d&q=%@&key=%@",
        (int)page + 1, encodedQuery, kSRCAPIKey];
     NSURL *url = urlComponents.URL;
@@ -217,9 +223,7 @@ static NSString * const kSRCAPIKey = @"77c80ca9368e24336a7185a9e569e599";
 
 - (PMKPromise *)getRecipe:(NSString *)recipeID
 {
-    NSURLComponents *urlComponents = [[NSURLComponents alloc] initWithString:kSRCBaseURLString];
-    urlComponents.scheme = self.baseURLScheme;
-    urlComponents.path = [urlComponents.path stringByAppendingString:@"get"];
+    NSURLComponents *urlComponents = [self urlComponentsForMethod:@"get"];
     urlComponents.query = [NSString stringWithFormat:@"rId=%@&key=%@", recipeID, kSRCAPIKey];
     NSURL *url = urlComponents.URL;
     
