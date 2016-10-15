@@ -11,6 +11,7 @@
 #import "SRCSignal.h"
 #import "SRCSearchEngine.h"
 #import "SRCF2FRecipe.h"
+#import "SRCF2FService.h"
 
 @interface SRCMasterViewController ()
 
@@ -44,9 +45,13 @@
     
     self.searchEngine = [[SRCSearchEngine alloc] initWithQuerySignal:self.textAndResultsMismatchSignal];
     [self.searchEngine.resultSignal setOutputPromiseSubscriber:^(PMKPromise *promise) {
-        promise.then(^(NSArray *recipes) {
-            //NSLog(@"%@", recipes);
-            weakSelf.objects = recipes;
+        promise.then(^(SRCF2FServiceSearchResult *searchResult) {
+            //NSLog(@"%@", searchResult.recipes);
+            // ignore stale results
+            if (![searchResult.query isEqualToString:self.searchTextField.text]) {
+                return;
+            }
+            weakSelf.objects = searchResult.recipes;
             [weakSelf.tableView reloadData];
         })
         .catch(^(NSError *error) {

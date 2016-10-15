@@ -23,6 +23,10 @@ static NSString * const kSRCAPIKey = @"77c80ca9368e24336a7185a9e569e599";
 @end
 
 
+@implementation SRCF2FServiceSearchResult
+@end
+
+
 @implementation SRCF2FService
 
 @synthesize urlSession = _urlSession;
@@ -219,7 +223,13 @@ static NSString * const kSRCAPIKey = @"77c80ca9368e24336a7185a9e569e599";
     return [self networkRequestPromiseForURL:url withDecoder:^(id jsonObject) {
         return [PMKPromise promiseWithResolver:^(PMKResolver resolver) {
             NSError *error = nil;
-            id result = [SRCF2FService decodeRecipeListFromJSONObject:jsonObject error:&error];
+            SRCF2FServiceSearchResult *result = nil;
+            NSArray<SRCF2FRecipe *> *recipes = [SRCF2FService decodeRecipeListFromJSONObject:jsonObject error:&error];
+            if (error == nil) {
+                result = [SRCF2FServiceSearchResult new];
+                result.query = query;
+                result.recipes = recipes;
+            }
             resolver(error ? error : result);
         }];
     }];

@@ -30,7 +30,10 @@
         
         NSString *query = valueOrError;
         if (query.length == 0) {
-            return [PMKPromise promiseWithValue:@[]];
+            SRCF2FServiceSearchResult *result = [SRCF2FServiceSearchResult new];
+            result.query = query;
+            result.recipes = @[];
+            return [PMKPromise promiseWithValue:result];
         }
         
         return [_service search:query page:0];

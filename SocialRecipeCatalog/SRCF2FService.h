@@ -8,6 +8,16 @@
 
 #import <Foundation/Foundation.h>
 @class PMKPromise;
+@class SRCF2FRecipe;
+
+
+@interface SRCF2FServiceSearchResult : NSObject
+
+@property NSString *query;
+@property NSArray<SRCF2FRecipe *> *recipes;
+
+@end
+
 
 @interface SRCF2FService : NSObject
 
