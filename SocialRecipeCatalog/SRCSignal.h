@@ -13,6 +13,7 @@
 
 - (void)resolve:(id)valueOrError;
 - (void)setOutputPromiseSubscriber:(void (^)(PMKPromise *))promiseSubscriber;
-- (void)pipeToSignal:(SRCSignal *)signal;
+- (SRCSignal *)map:(id (^)(id valueOrError))transformer;
+- (SRCSignal *)flatMap:(PMKPromise *(^)(id valueOrError))promiseConstructor;
 
 @end

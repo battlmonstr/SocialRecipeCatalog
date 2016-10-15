@@ -47,17 +47,38 @@
     [self resubscribe];
 }
 
-- (void)pipeToSignal:(SRCSignal *)signal
+- (SRCSignal *)map:(id (^)(id valueOrError))transformer
 {
-    __weak SRCSignal *weakSignal = signal;
+    SRCSignal *result = [SRCSignal new];
+    __weak SRCSignal *weakSignal = result;
     [self setOutputPromiseSubscriber:^(PMKPromise *promise) {
         promise.then(^(id data) {
-            [weakSignal resolve:data];
+            [weakSignal resolve:transformer(data)];
         })
         .catch(^(NSError *error) {
-            [weakSignal resolve:error];
+            [weakSignal resolve:transformer(error)];
         });
     }];
+    return result;
+}
+
+- (SRCSignal *)flatMap:(PMKPromise *(^)(id valueOrError))promiseConstructor
+{
+    SRCSignal *result = [SRCSignal new];
+    __weak SRCSignal *weakSignal = result;
+    [self setOutputPromiseSubscriber:^(PMKPromise *promise) {
+        void (^transformAndAwait)(id) = ^(id valueOrError) {
+            PMKPromise *subPromise = promiseConstructor(valueOrError);
+            subPromise.then(^(id subValue) {
+                [weakSignal resolve:subValue];
+            })
+            .catch(^(NSError *subError) {
+                [weakSignal resolve:subError];
+            });
+        };
+        promise.then(transformAndAwait).catch(transformAndAwait);
+    }];
+    return result;
 }
 
 @end
