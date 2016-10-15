@@ -9,11 +9,14 @@
 #import "SRCMasterViewController.h"
 #import "SRCDetailViewController.h"
 #import "SRCSignal.h"
+#import "SRCSearchEngine.h"
+#import "SRCF2FRecipe.h"
 
 @interface SRCMasterViewController ()
 
-@property NSMutableArray *objects;
+@property NSArray *objects;
 @property SRCSignal *textFieldDidChangeSignal;
+@property SRCSearchEngine *searchEngine;
 
 @end
 
@@ -24,14 +27,20 @@
     // Do any additional setup after loading the view, typically from a nib.
     self.navigationItem.leftBarButtonItem = self.editButtonItem;
 
-    UIBarButtonItem *addButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(insertNewObject:)];
-    self.navigationItem.rightBarButtonItem = addButton;
     self.detailViewController = (SRCDetailViewController *)[[self.splitViewController.viewControllers lastObject] topViewController];
     
     self.textFieldDidChangeSignal = [SRCSignal new];
-    [self.textFieldDidChangeSignal setOutputPromiseSubscriber:^(PMKPromise *promise) {
-        promise.then(^(NSString *text) {
-            NSLog(@"%@", text);
+    
+    self.searchEngine = [[SRCSearchEngine alloc] initWithQuerySignal:self.textFieldDidChangeSignal];
+    __weak SRCMasterViewController *weakSelf = self;
+    [self.searchEngine.resultSignal setOutputPromiseSubscriber:^(PMKPromise *promise) {
+        promise.then(^(NSArray *recipes) {
+            //NSLog(@"%@", recipes);
+            weakSelf.objects = recipes;
+            [weakSelf.tableView reloadData];
+        })
+        .catch(^(NSError *error) {
+            NSLog(@"searchEngine error: %@", error);
         });
     }];
 }
@@ -44,15 +53,6 @@
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
-}
-
-- (void)insertNewObject:(id)sender {
-    if (!self.objects) {
-        self.objects = [[NSMutableArray alloc] init];
-    }
-    [self.objects insertObject:[NSDate date] atIndex:0];
-    NSIndexPath *indexPath = [NSIndexPath indexPathForRow:0 inSection:0];
-    [self.tableView insertRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationAutomatic];
 }
 
 - (IBAction)textFieldDidChange:(UITextField *)searchTextField
@@ -86,23 +86,9 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Cell" forIndexPath:indexPath];
 
-    NSDate *object = self.objects[indexPath.row];
-    cell.textLabel.text = [object description];
+    SRCF2FRecipe *recipe = self.objects[indexPath.row];
+    cell.textLabel.text = recipe.title;
     return cell;
-}
-
-- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
-    // Return NO if you do not want the specified item to be editable.
-    return YES;
-}
-
-- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
-    if (editingStyle == UITableViewCellEditingStyleDelete) {
-        [self.objects removeObjectAtIndex:indexPath.row];
-        [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
-    } else if (editingStyle == UITableViewCellEditingStyleInsert) {
-        // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view.
-    }
 }
 
 @end
