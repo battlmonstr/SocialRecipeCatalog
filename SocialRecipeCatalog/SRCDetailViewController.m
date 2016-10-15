@@ -36,6 +36,13 @@
         } else {
             self.imageView.image = nil;
         }
+        self.publisherLabel.text = self.detailItem.publisher;
+        if (self.detailItem.social_rank < 1) {
+            self.socialRankLabel.text = @"";
+        } else {
+            NSString *formatString = NSLocalizedString(@"Social rank: %d", nil);
+            self.socialRankLabel.text = [NSString stringWithFormat:formatString, (int)self.detailItem.social_rank];
+        }
     }
 }
 

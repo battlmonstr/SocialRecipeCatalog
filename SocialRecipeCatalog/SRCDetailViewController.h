@@ -13,6 +13,8 @@
 
 @property (strong, nonatomic) SRCF2FRecipe *detailItem;
 @property (weak, nonatomic) IBOutlet UIImageView *imageView;
+@property (weak, nonatomic) IBOutlet UILabel *publisherLabel;
+@property (weak, nonatomic) IBOutlet UILabel *socialRankLabel;
 
 @end
 
