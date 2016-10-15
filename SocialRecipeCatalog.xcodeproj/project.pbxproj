@@ -13,10 +13,12 @@
 		65330E851DB29CE6008ACE21 /* NSData+ImageContentType.m in Sources */ = {isa = PBXBuildFile; fileRef = 65330E801DB29CE6008ACE21 /* NSData+ImageContentType.m */; };
 		65330E861DB29CE6008ACE21 /* UIImage+GIF.m in Sources */ = {isa = PBXBuildFile; fileRef = 65330E821DB29CE6008ACE21 /* UIImage+GIF.m */; };
 		65330E871DB29CE6008ACE21 /* UIImage+MultiFormat.m in Sources */ = {isa = PBXBuildFile; fileRef = 65330E841DB29CE6008ACE21 /* UIImage+MultiFormat.m */; };
+		65330E911DB2A259008ACE21 /* SRCF2FRecipe.m in Sources */ = {isa = PBXBuildFile; fileRef = 65330E8A1DB2A259008ACE21 /* SRCF2FRecipe.m */; };
+		65330E921DB2A259008ACE21 /* SRCF2FService.m in Sources */ = {isa = PBXBuildFile; fileRef = 65330E8C1DB2A259008ACE21 /* SRCF2FService.m */; };
+		65330E931DB2A259008ACE21 /* SRCF2FTestURLProtocol.m in Sources */ = {isa = PBXBuildFile; fileRef = 65330E8E1DB2A259008ACE21 /* SRCF2FTestURLProtocol.m */; };
+		65330E941DB2A259008ACE21 /* test_canned_recipe_response.json in Resources */ = {isa = PBXBuildFile; fileRef = 65330E8F1DB2A259008ACE21 /* test_canned_recipe_response.json */; };
+		65330E951DB2A259008ACE21 /* test_canned_search_response.json in Resources */ = {isa = PBXBuildFile; fileRef = 65330E901DB2A259008ACE21 /* test_canned_search_response.json */; };
 		65DA68E81DB21F6500C165FC /* SRCSearchEngine.m in Sources */ = {isa = PBXBuildFile; fileRef = 65DA68E71DB21F6500C165FC /* SRCSearchEngine.m */; };
-		65DA68EA1DB22C0E00C165FC /* test_canned_search_response.json in Resources */ = {isa = PBXBuildFile; fileRef = 65DA68E91DB22C0E00C165FC /* test_canned_search_response.json */; };
-		65DA68ED1DB22C7900C165FC /* SRCF2FTestURLProtocol.m in Sources */ = {isa = PBXBuildFile; fileRef = 65DA68EC1DB22C7900C165FC /* SRCF2FTestURLProtocol.m */; };
-		65DA68EF1DB280C200C165FC /* test_canned_recipe_response.json in Resources */ = {isa = PBXBuildFile; fileRef = 65DA68EE1DB280C200C165FC /* test_canned_recipe_response.json */; };
 		65DA68F11DB2855F00C165FC /* SRCF2FServiceTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 65DA68F01DB2855F00C165FC /* SRCF2FServiceTests.m */; };
 		65DD91781DB165770063121C /* PMKPromise+Hang.m in Sources */ = {isa = PBXBuildFile; fileRef = 65DD911C1DB165770063121C /* PMKPromise+Hang.m */; };
 		65DD91791DB165770063121C /* PMKPromise+Join.m in Sources */ = {isa = PBXBuildFile; fileRef = 65DD911D1DB165770063121C /* PMKPromise+Join.m */; };
@@ -35,8 +37,6 @@
 		65DD91921DB165770063121C /* SDWebImageManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 65DD91551DB165770063121C /* SDWebImageManager.m */; };
 		65DD91931DB165770063121C /* SDWebImagePrefetcher.m in Sources */ = {isa = PBXBuildFile; fileRef = 65DD91581DB165770063121C /* SDWebImagePrefetcher.m */; };
 		65DD91991DB165770063121C /* UIImageView+WebCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 65DD91641DB165770063121C /* UIImageView+WebCache.m */; };
-		65DD919E1DB16EB10063121C /* SRCF2FService.m in Sources */ = {isa = PBXBuildFile; fileRef = 65DD919D1DB16EB10063121C /* SRCF2FService.m */; };
-		65DD91A11DB184C00063121C /* SRCF2FRecipe.m in Sources */ = {isa = PBXBuildFile; fileRef = 65DD91A01DB184C00063121C /* SRCF2FRecipe.m */; };
 		65DD91A41DB190190063121C /* SRCSignal.m in Sources */ = {isa = PBXBuildFile; fileRef = 65DD91A31DB190190063121C /* SRCSignal.m */; };
 		65E7128F1DB16247009574CD /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 65E7128E1DB16247009574CD /* main.m */; };
 		65E712921DB16247009574CD /* SRCAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 65E712911DB16247009574CD /* SRCAppDelegate.m */; };
@@ -78,12 +78,16 @@
 		65330E821DB29CE6008ACE21 /* UIImage+GIF.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+GIF.m"; sourceTree = "<group>"; };
 		65330E831DB29CE6008ACE21 /* UIImage+MultiFormat.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+MultiFormat.h"; sourceTree = "<group>"; };
 		65330E841DB29CE6008ACE21 /* UIImage+MultiFormat.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+MultiFormat.m"; sourceTree = "<group>"; };
+		65330E891DB2A259008ACE21 /* SRCF2FRecipe.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SRCF2FRecipe.h; path = F2FService/SRCF2FRecipe.h; sourceTree = "<group>"; };
+		65330E8A1DB2A259008ACE21 /* SRCF2FRecipe.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SRCF2FRecipe.m; path = F2FService/SRCF2FRecipe.m; sourceTree = "<group>"; };
+		65330E8B1DB2A259008ACE21 /* SRCF2FService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SRCF2FService.h; path = F2FService/SRCF2FService.h; sourceTree = "<group>"; };
+		65330E8C1DB2A259008ACE21 /* SRCF2FService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SRCF2FService.m; path = F2FService/SRCF2FService.m; sourceTree = "<group>"; };
+		65330E8D1DB2A259008ACE21 /* SRCF2FTestURLProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SRCF2FTestURLProtocol.h; path = F2FService/SRCF2FTestURLProtocol.h; sourceTree = "<group>"; };
+		65330E8E1DB2A259008ACE21 /* SRCF2FTestURLProtocol.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SRCF2FTestURLProtocol.m; path = F2FService/SRCF2FTestURLProtocol.m; sourceTree = "<group>"; };
+		65330E8F1DB2A259008ACE21 /* test_canned_recipe_response.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = test_canned_recipe_response.json; path = F2FService/test_canned_recipe_response.json; sourceTree = "<group>"; };
+		65330E901DB2A259008ACE21 /* test_canned_search_response.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = test_canned_search_response.json; path = F2FService/test_canned_search_response.json; sourceTree = "<group>"; };
 		65DA68E61DB21F6500C165FC /* SRCSearchEngine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SRCSearchEngine.h; sourceTree = "<group>"; };
 		65DA68E71DB21F6500C165FC /* SRCSearchEngine.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SRCSearchEngine.m; sourceTree = "<group>"; };
-		65DA68E91DB22C0E00C165FC /* test_canned_search_response.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = test_canned_search_response.json; sourceTree = "<group>"; };
-		65DA68EB1DB22C7900C165FC /* SRCF2FTestURLProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SRCF2FTestURLProtocol.h; sourceTree = "<group>"; };
-		65DA68EC1DB22C7900C165FC /* SRCF2FTestURLProtocol.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SRCF2FTestURLProtocol.m; sourceTree = "<group>"; };
-		65DA68EE1DB280C200C165FC /* test_canned_recipe_response.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = test_canned_recipe_response.json; sourceTree = "<group>"; };
 		65DA68F01DB2855F00C165FC /* SRCF2FServiceTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SRCF2FServiceTests.m; sourceTree = "<group>"; };
 		65DD90FF1DB165770063121C /* LICENSE.text */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = LICENSE.text; sourceTree = "<group>"; };
 		65DD91001DB165770063121C /* README.markdown */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.markdown; sourceTree = "<group>"; };
@@ -125,10 +129,6 @@
 		65DD91581DB165770063121C /* SDWebImagePrefetcher.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SDWebImagePrefetcher.m; sourceTree = "<group>"; };
 		65DD91631DB165770063121C /* UIImageView+WebCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImageView+WebCache.h"; sourceTree = "<group>"; };
 		65DD91641DB165770063121C /* UIImageView+WebCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImageView+WebCache.m"; sourceTree = "<group>"; };
-		65DD919C1DB16EB10063121C /* SRCF2FService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SRCF2FService.h; sourceTree = "<group>"; };
-		65DD919D1DB16EB10063121C /* SRCF2FService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SRCF2FService.m; sourceTree = "<group>"; };
-		65DD919F1DB184C00063121C /* SRCF2FRecipe.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SRCF2FRecipe.h; sourceTree = "<group>"; };
-		65DD91A01DB184C00063121C /* SRCF2FRecipe.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SRCF2FRecipe.m; sourceTree = "<group>"; };
 		65DD91A21DB190190063121C /* SRCSignal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SRCSignal.h; sourceTree = "<group>"; };
 		65DD91A31DB190190063121C /* SRCSignal.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SRCSignal.m; sourceTree = "<group>"; };
 		65E7128A1DB16247009574CD /* SocialRecipeCatalog.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SocialRecipeCatalog.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -175,6 +175,21 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		65330E881DB2A225008ACE21 /* F2FService */ = {
+			isa = PBXGroup;
+			children = (
+				65330E891DB2A259008ACE21 /* SRCF2FRecipe.h */,
+				65330E8A1DB2A259008ACE21 /* SRCF2FRecipe.m */,
+				65330E8B1DB2A259008ACE21 /* SRCF2FService.h */,
+				65330E8C1DB2A259008ACE21 /* SRCF2FService.m */,
+				65330E8D1DB2A259008ACE21 /* SRCF2FTestURLProtocol.h */,
+				65330E8E1DB2A259008ACE21 /* SRCF2FTestURLProtocol.m */,
+				65330E8F1DB2A259008ACE21 /* test_canned_recipe_response.json */,
+				65330E901DB2A259008ACE21 /* test_canned_search_response.json */,
+			);
+			name = F2FService;
+			sourceTree = "<group>";
+		};
 		65DD90FD1DB165770063121C /* Vendor */ = {
 			isa = PBXGroup;
 			children = (
@@ -305,30 +320,21 @@
 		65E7128C1DB16247009574CD /* SocialRecipeCatalog */ = {
 			isa = PBXGroup;
 			children = (
-				65DD90FD1DB165770063121C /* Vendor */,
+				65330E881DB2A225008ACE21 /* F2FService */,
 				65E712901DB16247009574CD /* SRCAppDelegate.h */,
 				65E712911DB16247009574CD /* SRCAppDelegate.m */,
 				65E712931DB16247009574CD /* SRCMasterViewController.h */,
 				65E712941DB16247009574CD /* SRCMasterViewController.m */,
-				65E712961DB16247009574CD /* SRCDetailViewController.h */,
-				65E712971DB16247009574CD /* SRCDetailViewController.m */,
-				65E712991DB16247009574CD /* Main.storyboard */,
-				65E7129C1DB16247009574CD /* Assets.xcassets */,
-				65E7129E1DB16247009574CD /* LaunchScreen.storyboard */,
-				65E712A11DB16247009574CD /* Info.plist */,
-				65E7128D1DB16247009574CD /* Supporting Files */,
-				65DD919C1DB16EB10063121C /* SRCF2FService.h */,
-				65DD919D1DB16EB10063121C /* SRCF2FService.m */,
-				65DD919F1DB184C00063121C /* SRCF2FRecipe.h */,
-				65DD91A01DB184C00063121C /* SRCF2FRecipe.m */,
-				65DD91A21DB190190063121C /* SRCSignal.h */,
-				65DD91A31DB190190063121C /* SRCSignal.m */,
 				65DA68E61DB21F6500C165FC /* SRCSearchEngine.h */,
 				65DA68E71DB21F6500C165FC /* SRCSearchEngine.m */,
-				65DA68EB1DB22C7900C165FC /* SRCF2FTestURLProtocol.h */,
-				65DA68EC1DB22C7900C165FC /* SRCF2FTestURLProtocol.m */,
-				65DA68E91DB22C0E00C165FC /* test_canned_search_response.json */,
-				65DA68EE1DB280C200C165FC /* test_canned_recipe_response.json */,
+				65E712961DB16247009574CD /* SRCDetailViewController.h */,
+				65E712971DB16247009574CD /* SRCDetailViewController.m */,
+				65DD91A21DB190190063121C /* SRCSignal.h */,
+				65DD91A31DB190190063121C /* SRCSignal.m */,
+				65E712991DB16247009574CD /* Main.storyboard */,
+				65E7129C1DB16247009574CD /* Assets.xcassets */,
+				65E7128D1DB16247009574CD /* Supporting Files */,
+				65DD90FD1DB165770063121C /* Vendor */,
 			);
 			path = SocialRecipeCatalog;
 			sourceTree = "<group>";
@@ -336,6 +342,8 @@
 		65E7128D1DB16247009574CD /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				65E7129E1DB16247009574CD /* LaunchScreen.storyboard */,
+				65E712A11DB16247009574CD /* Info.plist */,
 				65E7128E1DB16247009574CD /* main.m */,
 			);
 			name = "Supporting Files";
@@ -462,10 +470,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				65DA68EF1DB280C200C165FC /* test_canned_recipe_response.json in Resources */,
 				65E712A01DB16247009574CD /* LaunchScreen.storyboard in Resources */,
+				65330E941DB2A259008ACE21 /* test_canned_recipe_response.json in Resources */,
+				65330E951DB2A259008ACE21 /* test_canned_search_response.json in Resources */,
 				65E7129D1DB16247009574CD /* Assets.xcassets in Resources */,
-				65DA68EA1DB22C0E00C165FC /* test_canned_search_response.json in Resources */,
 				65DD91861DB165770063121C /* LICENSE in Resources */,
 				65E7129B1DB16247009574CD /* Main.storyboard in Resources */,
 			);
@@ -492,15 +500,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				65DD919E1DB16EB10063121C /* SRCF2FService.m in Sources */,
 				65DD91781DB165770063121C /* PMKPromise+Hang.m in Sources */,
 				65E712921DB16247009574CD /* SRCAppDelegate.m in Sources */,
 				65E712951DB16247009574CD /* SRCMasterViewController.m in Sources */,
 				65E7128F1DB16247009574CD /* main.m in Sources */,
 				65DD918C1DB165770063121C /* SDImageCache.m in Sources */,
 				65DD91921DB165770063121C /* SDWebImageManager.m in Sources */,
+				65330E911DB2A259008ACE21 /* SRCF2FRecipe.m in Sources */,
 				65DD91991DB165770063121C /* UIImageView+WebCache.m in Sources */,
-				65DA68ED1DB22C7900C165FC /* SRCF2FTestURLProtocol.m in Sources */,
 				65DD917B1DB165770063121C /* PMKPromise+Until.m in Sources */,
 				65DD917E1DB165770063121C /* PMKPromise.m in Sources */,
 				65DD917C1DB165770063121C /* PMKPromise+When.m in Sources */,
@@ -512,7 +519,6 @@
 				65330E7A1DB29C77008ACE21 /* UIView+WebCache.m in Sources */,
 				65330E861DB29CE6008ACE21 /* UIImage+GIF.m in Sources */,
 				65E712981DB16247009574CD /* SRCDetailViewController.m in Sources */,
-				65DD91A11DB184C00063121C /* SRCF2FRecipe.m in Sources */,
 				65DD918F1DB165770063121C /* SDWebImageDecoder.m in Sources */,
 				65DD917A1DB165770063121C /* PMKPromise+Pause.m in Sources */,
 				65330E7E1DB29C97008ACE21 /* NSImage+WebCache.m in Sources */,
@@ -521,6 +527,8 @@
 				65DA68E81DB21F6500C165FC /* SRCSearchEngine.m in Sources */,
 				65DD918D1DB165770063121C /* SDImageCacheConfig.m in Sources */,
 				65DD918E1DB165770063121C /* SDWebImageCompat.m in Sources */,
+				65330E931DB2A259008ACE21 /* SRCF2FTestURLProtocol.m in Sources */,
+				65330E921DB2A259008ACE21 /* SRCF2FService.m in Sources */,
 				65330E851DB29CE6008ACE21 /* NSData+ImageContentType.m in Sources */,
 				65DD917D1DB165770063121C /* PMKPromise+Zalgo.m in Sources */,
 			);
