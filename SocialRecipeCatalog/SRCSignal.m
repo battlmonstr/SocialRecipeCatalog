@@ -7,11 +7,13 @@
 //
 
 #import "SRCSignal.h"
+#import <PromiseKit/Promise+Pause.h>
 
 @implementation SRCSignal
 {
     PMKResolver _subscriberResolver;
     void (^_promiseSubscriber)(PMKPromise *);
+    id _userInfo;
 }
 
 - (void)resolve:(id)valueOrError
@@ -77,6 +79,57 @@
             });
         };
         promise.then(transformAndAwait).catch(transformAndAwait);
+    }];
+    return result;
+}
+
+- (SRCSignal *)throttleWithTimeout:(NSTimeInterval)timeout
+{
+    SRCSignal *result = [SRCSignal new];
+    __weak SRCSignal *weakSignal = result;
+    [self setOutputPromiseSubscriber:^(PMKPromise *promise) {
+        promise.then(^(id data) {
+            if (weakSignal == nil) return;
+            SRCSignal *strongResultSignal = weakSignal;
+            NSDate *eventDate = [NSDate date];
+            
+            // if it's the first event, just send it (and remember the date)
+            if (strongResultSignal->_userInfo == nil) {
+                strongResultSignal->_userInfo = @[eventDate, [NSDate distantPast]];
+                [strongResultSignal resolve:data];
+            } else {
+                NSArray *userInfo = strongResultSignal->_userInfo;
+                NSDate *lastEventDate = userInfo[0];
+                NSTimeInterval waitTime = timeout - [eventDate timeIntervalSinceDate:lastEventDate];
+
+                // if enough time passed, we can send it (and remember the date)
+                if (waitTime <= 0) {
+                    strongResultSignal->_userInfo = @[eventDate, [NSDate distantPast]];
+                    [strongResultSignal resolve:data];
+                } else {
+                    // save the pending event date, and wait
+                    strongResultSignal->_userInfo = @[lastEventDate, eventDate];
+                    [PMKPromise promiseWithValue:data]
+                        .pause(waitTime)
+                        .then(^(id sameOldData) {
+                            if (weakSignal == nil) return;
+                            SRCSignal *strongResultSignal = weakSignal;
+                            NSArray *updatedUserInfo = strongResultSignal->_userInfo;
+                            NSDate *pendingEventDate = updatedUserInfo[1];
+                            
+                            // if the current event is still the last one seen after the pause,
+                            // we can send it, otherwise it will be just skipped out
+                            if ([eventDate isEqual:pendingEventDate]) {
+                                strongResultSignal->_userInfo = @[[NSDate date], [NSDate distantPast]];
+                                [strongResultSignal resolve:sameOldData];
+                            }
+                        });
+                }
+            }
+        })
+        .catch(^(NSError *error) {
+            [weakSignal resolve:error];
+        });
     }];
     return result;
 }

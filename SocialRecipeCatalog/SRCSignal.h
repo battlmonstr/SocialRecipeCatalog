@@ -15,5 +15,6 @@
 - (void)setOutputPromiseSubscriber:(void (^)(PMKPromise *))promiseSubscriber;
 - (SRCSignal *)map:(id (^)(id valueOrError))transformer;
 - (SRCSignal *)flatMap:(PMKPromise *(^)(id valueOrError))promiseConstructor;
+- (SRCSignal *)throttleWithTimeout:(NSTimeInterval)timeout;
 
 @end
