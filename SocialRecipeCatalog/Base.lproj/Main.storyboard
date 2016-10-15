@@ -93,6 +93,7 @@
                     <toolbarItems/>
                     <navigationItem key="navigationItem" title="Detail" id="mOI-FS-AaM"/>
                     <connections>
+                        <outlet property="footerView" destination="p8X-Il-PQd" id="KpR-F9-qni"/>
                         <outlet property="imageView" destination="4KP-Az-3MV" id="G0t-BF-ep7"/>
                         <outlet property="infoTableView" destination="Nwp-Zo-YCI" id="xmq-Ug-Fyc"/>
                         <outlet property="publisherLabel" destination="ASg-t8-jUS" id="gR3-Ic-M6A"/>

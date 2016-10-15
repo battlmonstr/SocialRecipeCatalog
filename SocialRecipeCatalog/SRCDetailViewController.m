@@ -35,7 +35,7 @@ typedef enum
         // Update the view.
         [self configureView];
         
-        if (_detailItem.ingredients == nil) {
+        if (_detailItem && (_detailItem.ingredients == nil)) {
             [self loadIngredients];
         }
     }
@@ -75,7 +75,13 @@ typedef enum
             NSString *formatString = NSLocalizedString(@"Social rank: %d", nil);
             self.socialRankLabel.text = [NSString stringWithFormat:formatString, (int)self.detailItem.social_rank];
         }
+    } else {
+        // clear the view
+        self.title = @"";
+        self.imageView.image = nil;
     }
+    self.footerView.hidden = (self.detailItem == nil);
+    self.infoTableView.hidden = (self.detailItem == nil);
 }
 
 - (void)viewDidLoad {
