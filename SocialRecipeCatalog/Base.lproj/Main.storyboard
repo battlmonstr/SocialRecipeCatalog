@@ -65,23 +65,36 @@
                                     <constraint firstItem="Vg9-nS-WF4" firstAttribute="top" secondItem="p8X-Il-PQd" secondAttribute="top" id="wJs-SV-kAA"/>
                                 </constraints>
                             </view>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Nwp-Zo-YCI" userLabel="infoTableView">
+                                <rect key="frame" x="20" y="320" width="560" height="234"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="JEX-9P-axG" id="sRM-aa-sUx"/>
+                                    <outlet property="delegate" destination="JEX-9P-axG" id="r1X-bH-Vhy"/>
+                                </connections>
+                            </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="p8X-Il-PQd" firstAttribute="trailing" secondItem="svH-Pt-448" secondAttribute="trailingMargin" id="Atj-iO-ZCY"/>
+                            <constraint firstItem="Nwp-Zo-YCI" firstAttribute="trailing" secondItem="svH-Pt-448" secondAttribute="trailingMargin" id="B8p-D4-0Wy"/>
+                            <constraint firstItem="Nwp-Zo-YCI" firstAttribute="top" secondItem="4KP-Az-3MV" secondAttribute="bottom" constant="8" id="CBC-U2-BLW"/>
                             <constraint firstItem="GAO-Cl-Wes" firstAttribute="top" secondItem="p8X-Il-PQd" secondAttribute="bottom" constant="8" id="FJ6-nJ-tNV"/>
                             <constraint firstItem="4KP-Az-3MV" firstAttribute="trailing" secondItem="svH-Pt-448" secondAttribute="trailingMargin" id="FMb-rf-0HX"/>
+                            <constraint firstItem="Nwp-Zo-YCI" firstAttribute="leading" secondItem="svH-Pt-448" secondAttribute="leadingMargin" id="Fhq-y6-NO6"/>
                             <constraint firstItem="4KP-Az-3MV" firstAttribute="height" secondItem="svH-Pt-448" secondAttribute="height" multiplier="0.4" id="Gj9-Hn-Veh"/>
                             <constraint firstItem="p8X-Il-PQd" firstAttribute="height" secondItem="svH-Pt-448" secondAttribute="height" multiplier="0.05" id="OhE-AF-NNu"/>
                             <constraint firstItem="p8X-Il-PQd" firstAttribute="leading" secondItem="svH-Pt-448" secondAttribute="leadingMargin" id="hQ2-6T-TzW"/>
                             <constraint firstItem="4KP-Az-3MV" firstAttribute="top" secondItem="SYR-Wa-9uf" secondAttribute="bottom" constant="8" id="lbD-7C-Had"/>
                             <constraint firstItem="4KP-Az-3MV" firstAttribute="leading" secondItem="svH-Pt-448" secondAttribute="leadingMargin" id="oqs-gm-VDr"/>
+                            <constraint firstItem="p8X-Il-PQd" firstAttribute="top" secondItem="Nwp-Zo-YCI" secondAttribute="bottom" constant="8" id="zbC-Fi-Mqt"/>
                         </constraints>
                     </view>
                     <toolbarItems/>
                     <navigationItem key="navigationItem" title="Detail" id="mOI-FS-AaM"/>
                     <connections>
                         <outlet property="imageView" destination="4KP-Az-3MV" id="G0t-BF-ep7"/>
+                        <outlet property="infoTableView" destination="Nwp-Zo-YCI" id="xmq-Ug-Fyc"/>
                         <outlet property="publisherLabel" destination="ASg-t8-jUS" id="gR3-Ic-M6A"/>
                         <outlet property="socialRankLabel" destination="Vg9-nS-WF4" id="9yE-cY-cNY"/>
                     </connections>
