@@ -110,8 +110,6 @@ typedef enum
         if (cell == nil)
         {
             cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"RecipeIngredientCellId"];
-            cell.textLabel.adjustsFontSizeToFitWidth = YES;
-            cell.selectionStyle = UITableViewCellSelectionStyleNone;
         }
 
         cell.textLabel.text = self.detailItem.ingredients[indexPath.row];
@@ -167,12 +165,21 @@ typedef enum
 // UITableViewDelegate
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
+    if (indexPath.section == SRCRecipeInfoSectionIngredients) {
+        NSString *text = self.detailItem.ingredients[indexPath.row];
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:NSLocalizedString(@"Ingredient", nil)
+            message:text delegate:nil cancelButtonTitle:NSLocalizedString(@"OK", nil) otherButtonTitles:nil];
+        [alert show];
+        return;
+    }
+    
     if (indexPath.section == SRCRecipeInfoSectionLinks) {
         NSURL *url = indexPath.row ? self.detailItem.source_url : self.detailItem.f2f_url;
         if (url) {
             SFSafariViewController *safariVC = [[SFSafariViewController alloc] initWithURL:url];
             [self.navigationController pushViewController:safariVC animated:YES];
         }
+        return;
     }
 }
 
