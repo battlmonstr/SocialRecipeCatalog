@@ -16,7 +16,9 @@
 
 @property NSArray *objects;
 @property SRCSignal *textFieldDidChangeSignal;
+@property SRCSignal *textAndResultsMismatchSignal;
 @property SRCSearchEngine *searchEngine;
+@property UIActivityIndicatorView *activityIndicator;
 
 @end
 
@@ -25,13 +27,22 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
+    
+    [self setupActivityIndicator];
 
     self.detailViewController = (SRCDetailViewController *)[[self.splitViewController.viewControllers lastObject] topViewController];
     
     self.textFieldDidChangeSignal = [SRCSignal new];
-    
-    self.searchEngine = [[SRCSearchEngine alloc] initWithQuerySignal:self.textFieldDidChangeSignal];
+
     __weak SRCMasterViewController *weakSelf = self;
+    self.textAndResultsMismatchSignal = [self.textFieldDidChangeSignal map:^id(id valueOrError) {
+        weakSelf.objects = @[];
+        [weakSelf.tableView reloadData];
+        [weakSelf.activityIndicator startAnimating];
+        return valueOrError;
+    }];
+    
+    self.searchEngine = [[SRCSearchEngine alloc] initWithQuerySignal:self.textAndResultsMismatchSignal];
     [self.searchEngine.resultSignal setOutputPromiseSubscriber:^(PMKPromise *promise) {
         promise.then(^(NSArray *recipes) {
             //NSLog(@"%@", recipes);
@@ -40,10 +51,29 @@
         })
         .catch(^(NSError *error) {
             NSLog(@"searchEngine error: %@", error);
+        })
+        .finally(^() {
+            [weakSelf.activityIndicator stopAnimating];
         });
     }];
     
     [self.searchTextField becomeFirstResponder];
+}
+
+- (void)setupActivityIndicator
+{
+    self.activityIndicator = [[UIActivityIndicatorView alloc] initWithFrame:CGRectMake(0, 0, 40, 40)];
+    self.activityIndicator.hidesWhenStopped = YES;
+    self.activityIndicator.activityIndicatorViewStyle = UIActivityIndicatorViewStyleGray;
+    self.activityIndicator.translatesAutoresizingMaskIntoConstraints = NO;
+    NSArray *activityIndicatorConstraints = @[
+        [NSLayoutConstraint constraintWithItem:self.activityIndicator attribute:NSLayoutAttributeCenterX
+            relatedBy:NSLayoutRelationEqual toItem:self.view attribute:NSLayoutAttributeCenterX multiplier:1.0f constant:0.0f],
+        [NSLayoutConstraint constraintWithItem:self.activityIndicator attribute:NSLayoutAttributeCenterY
+            relatedBy:NSLayoutRelationEqual toItem:self.view attribute:NSLayoutAttributeCenterY multiplier:0.75f constant:0.0f],
+    ];
+    [self.view addSubview:self.activityIndicator];
+    [self.view addConstraints:activityIndicatorConstraints];
 }
 
 - (void)viewWillAppear:(BOOL)animated {

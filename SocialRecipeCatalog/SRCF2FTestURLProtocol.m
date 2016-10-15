@@ -27,6 +27,16 @@
 
 - (void)startLoading
 {
+    const int delay = 0;
+    if (delay > 0) {
+        [self performSelector:@selector(completeLoading) withObject:nil afterDelay:delay];
+    } else {
+        [self completeLoading];
+    }
+}
+
+- (void)completeLoading
+{
     NSString *responseName = [self.request.URL.path hasSuffix:@"/search"]
         ? @"test_canned_search_response"
         : @"test_canned_recipe_response";
