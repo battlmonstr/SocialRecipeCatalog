@@ -46,24 +46,27 @@
     self.searchEngine = [[SRCSearchEngine alloc] initWithQuerySignal:self.textAndResultsMismatchSignal];
     [self.searchEngine.resultSignal setOutputPromiseSubscriber:^(PMKPromise *promise) {
         promise.then(^(SRCF2FServiceSearchResult *searchResult) {
-            //NSLog(@"%@", searchResult.recipes);
+            //NSLog(@"%@", searchResult);
             // ignore stale results
             if (![searchResult.query isEqualToString:self.searchTextField.text]) {
                 return;
             }
+            [weakSelf.activityIndicator stopAnimating];
             weakSelf.objects = searchResult.recipes;
             [weakSelf.tableView reloadData];
         })
         .catch(^(NSError *error) {
+            // ignore old cancelled searches
+            if ([error.domain isEqualToString:NSURLErrorDomain] && (error.code == NSURLErrorCancelled))
+                return;
+            [weakSelf.activityIndicator stopAnimating];
+            
             NSLog(@"searchEngine error: %@", error);
             
             UIAlertView *errorAlert = [[UIAlertView alloc] initWithTitle:[error localizedDescription]
                 message:[error localizedRecoverySuggestion] delegate:nil
                 cancelButtonTitle:NSLocalizedString(@"Dismiss", nil) otherButtonTitles:nil];
             [errorAlert show];
-        })
-        .finally(^() {
-            [weakSelf.activityIndicator stopAnimating];
         });
     }];
     

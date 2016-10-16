@@ -23,5 +23,6 @@
 
 - (PMKPromise *)search:(NSString *)query page:(NSUInteger)page;
 - (PMKPromise *)getRecipe:(NSString *)recipeID;
+- (void)cancelPendingRequests;
 
 @end

@@ -42,7 +42,6 @@ If you want to avoid real API requests during debugging, set isTestMode to YES i
 ### Missing features and bugs
 
 * Pagination: currently only the first page is queried, but the service supports "page" number parameter. There can be several strategies: either populate more and more into the collection view, or have a "load more" button. On the other hand, the API doesn't offer sorting by relevancy, so it might be better to query several pages in advance and then combine results using smarter logic.
-* Cancel previous outstanding search requests. Currently the search requests are throttled to happen not more often than 1 second (see kSRCThrottleTimeout). On bad network conditions this is not be enough, and it would be better to cancel pending requests instead of queueing more and more of them.
 * Publisher name and social rank font sizes can be different (if the publisher name is long).
 * Unit tests for SRCSignal.
 * Error messages can be improved. For example when the service is not available or the API key is bad etc.

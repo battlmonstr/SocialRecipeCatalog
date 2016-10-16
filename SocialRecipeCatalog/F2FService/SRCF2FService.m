@@ -63,6 +63,12 @@ static NSString * const kSRCAPIKey = @"77c80ca9368e24336a7185a9e569e599";
     return [NSURLSession sessionWithConfiguration:config];
 }
 
+- (void)cancelPendingRequests
+{
+    [_urlSession invalidateAndCancel];
+    _urlSession = [SRCF2FService createURLSessionWithProtocol:[_urlSession.configuration.protocolClasses firstObject]];
+}
+
 + (id)decodeJSONResponse:(NSURLResponse *)response withData:(NSData *)data error:(NSError **)error
 {
     NSAssert(![NSThread isMainThread], @"Invalid thread for network data processing.");

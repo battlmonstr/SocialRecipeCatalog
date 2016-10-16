@@ -32,6 +32,9 @@ static const NSTimeInterval kSRCThrottleTimeout = 1;
             return [PMKPromise promiseWithValue:valueOrError];
         }
         
+        // cancel old requests, because we won't need the results
+        [_service cancelPendingRequests];
+        
         NSString *query = valueOrError;
         if (query.length == 0) {
             SRCF2FServiceSearchResult *result = [SRCF2FServiceSearchResult new];
